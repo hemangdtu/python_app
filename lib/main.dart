@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'package:fluid_bottom_nav_bar/pages/examples.dart';
+import 'package:fluid_bottom_nav_bar/pages/home.dart';
 import 'package:fluid_bottom_nav_bar/pages/search.dart';
+import 'package:fluid_bottom_nav_bar/pages/list.dart';
+import 'package:fluid_bottom_nav_bar/pages/examplefile.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -26,12 +27,19 @@ class _MyHomePageState extends State<MyHomePage> {
 
   final DialogsExample _listexamples = DialogsExample();
   final Search _searchbarcode = Search();
-
+  final ListBodyLayout _list = ListBodyLayout();
+  final ExamplesNew _newexamples = ExamplesNew();
   Widget _showPage = DialogsExample();
 
   Widget _pageChooser(int page) {
     switch (page) {
+      case 0:
+        return _list;
+        break;
       case 1:
+        return _newexamples;
+        break;
+      case 2:
         return _listexamples;
         break;
       case 3:
