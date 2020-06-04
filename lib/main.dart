@@ -4,6 +4,7 @@ import 'package:fluid_bottom_nav_bar/pages/home.dart';
 import 'package:fluid_bottom_nav_bar/pages/search.dart';
 import 'package:fluid_bottom_nav_bar/pages/list.dart';
 import 'package:fluid_bottom_nav_bar/pages/examplefile.dart';
+import 'package:fluid_bottom_nav_bar/pages/resources.dart';
 
 void main() => runApp(MyApp());
 
@@ -29,6 +30,7 @@ class _MyHomePageState extends State<MyHomePage> {
   final Search _searchbarcode = Search();
   final ListBodyLayout _list = ListBodyLayout();
   final ExamplesNew _newexamples = ExamplesNew();
+  final ResourceList _resourceList = ResourceList();
   Widget _showPage = DialogsExample();
 
   Widget _pageChooser(int page) {
@@ -44,6 +46,9 @@ class _MyHomePageState extends State<MyHomePage> {
         break;
       case 3:
         return _searchbarcode;
+        break;
+      case 4:
+        return _resourceList;
         break;
       default:
         return new Container(
@@ -100,12 +105,12 @@ class _MyHomePageState extends State<MyHomePage> {
         height: 55,
         items: <Widget>[
           Icon(
-            Icons.blur_linear,
+            Icons.ondemand_video,
             size: 40,
             color: Colors.black,
           ),
           Icon(
-            Icons.linear_scale,
+            Icons.code,
             size: 40,
             color: Colors.black,
           ),
@@ -120,7 +125,7 @@ class _MyHomePageState extends State<MyHomePage> {
             color: Colors.black,
           ),
           Icon(
-            Icons.favorite,
+            Icons.book,
             size: 40,
             color: Colors.black,
           ),

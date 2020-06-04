@@ -147,9 +147,9 @@ class RoutesExample extends StatelessWidget {
 }
 
 // <Null> means this route returns nothing.
-class _PageTwo extends MaterialPageRoute<Null> {
-  _PageTwo()
-      : super(
+class _PageTwo extends MaterialPageRoute<Null>
+{
+  _PageTwo() : super(
           builder: (BuildContext context) {
             return Scaffold(
               appBar: AppBar(

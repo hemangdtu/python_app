@@ -45,7 +45,7 @@ Widget _myListView(BuildContext context) {
   );
 }
 
-_launchURL1 () async {
+_launchURL1() async {
   const url = 'https://www.youtube.com/watch?v=0t0AS1abKkw';
   if (await canLaunch(url)) {
     await launch(
@@ -57,7 +57,7 @@ _launchURL1 () async {
   }
 }
 
-_launchURL2 () async {
+_launchURL2() async {
   const url = 'https://www.youtube.com/watch?v=bqyJRQR_Ml4';
   if (await canLaunch(url)) {
     await launch(
@@ -69,7 +69,7 @@ _launchURL2 () async {
   }
 }
 
-_launchURL3 () async {
+_launchURL3() async {
   const url = 'https://www.youtube.com/watch?v=R0oscluaoDU';
   if (await canLaunch(url)) {
     await launch(
@@ -81,7 +81,7 @@ _launchURL3 () async {
   }
 }
 
-_launchURL4 () async {
+_launchURL4() async {
   const url = 'https://www.youtube.com/watch?v=T2G9LnAM43Q';
   if (await canLaunch(url)) {
     await launch(
@@ -93,7 +93,7 @@ _launchURL4 () async {
   }
 }
 
-_launchURL5 () async {
+_launchURL5() async {
   const url = 'https://www.youtube.com/watch?v=YQIlC5u0sk8';
   if (await canLaunch(url)) {
     await launch(
@@ -105,7 +105,7 @@ _launchURL5 () async {
   }
 }
 
-_launchURL6 () async {
+_launchURL6() async {
   const url = 'https://www.youtube.com/watch?v=6OJqKLF2EP8';
   if (await canLaunch(url)) {
     await launch(
