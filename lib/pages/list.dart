@@ -9,43 +9,71 @@ class ListBodyLayout extends StatelessWidget {
 }
 
 Widget _myListView(BuildContext context) {
-  return ListView(
-    children: <Widget>[
-      ListTile(
-        title: Text('Overview of Python Programming'),
-        trailing: Icon(Icons.play_circle_filled),
-        onTap: _launchURL1,
+  return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [
+            Colors.blue[100],
+            Colors.blue[300],
+          ],
+          begin: Alignment.bottomCenter,
+          end: Alignment.topCenter,
+          tileMode: TileMode.clamp,
+        ),
       ),
-      ListTile(
-        title: Text('Datatypes in Python Programming'),
-        trailing: Icon(Icons.play_circle_filled),
-        onTap: _launchURL2,
-      ),
-      ListTile(
-        title: Text('Creating Variables in Python Programming'),
-        trailing: Icon(Icons.play_circle_filled),
-        onTap: _launchURL3,
-      ),
-      ListTile(
-        title: Text('print( ) in Python Programming'),
-        trailing: Icon(Icons.play_circle_filled),
-        onTap: _launchURL4,
-      ),
-      ListTile(
-        title: Text('input( ) in Python Programming'),
-        trailing: Icon(Icons.play_circle_filled),
-        onTap: _launchURL5,
-      ),
-      ListTile(
-        title: Text('Operators in Python Programming'),
-        trailing: Icon(Icons.play_circle_filled),
-        onTap: _launchURL6,
-      ),
-    ],
-  );
+      child: ListView(
+        children: <Widget>[
+          ListElement(
+            title: "Overview of Python Programming",
+            link: _launchURL1,
+          ),
+          ListElement(
+            title: "Datatypes in Python Programming",
+            link: _launchURL2,
+          ),
+          ListElement(
+            title: "Creating Variables in Python Programming",
+            link: _launchURL3,
+          ),
+          ListElement(
+            title: "print( ) in Python Programming",
+            link: _launchURL4,
+          ),
+          ListElement(
+            title: "input( ) in Python Programming",
+            link: _launchURL5,
+          ),
+          ListElement(
+            title: "Operators in Python Programming",
+            link: _launchURL6,
+          ),
+        ],
+      ));
 }
 
-_launchURL1 () async {
+class ListElement extends StatelessWidget {
+  ListElement({this.title, this.link});
+
+  final String title;
+  final Function link;
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      title: Text(
+        title,
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+      trailing: Icon(Icons.play_circle_filled),
+      onTap: link,
+      subtitle: Text("YouTube Link"),
+    );
+  }
+}
+
+_launchURL1() async {
   const url = 'https://www.youtube.com/watch?v=0t0AS1abKkw';
   if (await canLaunch(url)) {
     await launch(
@@ -57,7 +85,7 @@ _launchURL1 () async {
   }
 }
 
-_launchURL2 () async {
+_launchURL2() async {
   const url = 'https://www.youtube.com/watch?v=bqyJRQR_Ml4';
   if (await canLaunch(url)) {
     await launch(
@@ -69,7 +97,7 @@ _launchURL2 () async {
   }
 }
 
-_launchURL3 () async {
+_launchURL3() async {
   const url = 'https://www.youtube.com/watch?v=R0oscluaoDU';
   if (await canLaunch(url)) {
     await launch(
@@ -81,7 +109,7 @@ _launchURL3 () async {
   }
 }
 
-_launchURL4 () async {
+_launchURL4() async {
   const url = 'https://www.youtube.com/watch?v=T2G9LnAM43Q';
   if (await canLaunch(url)) {
     await launch(
@@ -93,7 +121,7 @@ _launchURL4 () async {
   }
 }
 
-_launchURL5 () async {
+_launchURL5() async {
   const url = 'https://www.youtube.com/watch?v=YQIlC5u0sk8';
   if (await canLaunch(url)) {
     await launch(
@@ -105,7 +133,7 @@ _launchURL5 () async {
   }
 }
 
-_launchURL6 () async {
+_launchURL6() async {
   const url = 'https://www.youtube.com/watch?v=6OJqKLF2EP8';
   if (await canLaunch(url)) {
     await launch(

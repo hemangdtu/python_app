@@ -10,6 +10,20 @@ class ResourceList extends StatelessWidget {
 
 Widget _resourcesList(BuildContext context) {
   return Container(
+    decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [
+            Colors.blue[100],
+            Colors.blue[300],
+          ],
+          begin: Alignment.bottomCenter,
+          end: Alignment.topCenter,
+          tileMode: TileMode.clamp,
+        ),
+      ),
+
+
+
     padding: EdgeInsets.all(30.0),
     child: GridView.count(
       crossAxisCount: 2,
@@ -67,9 +81,11 @@ class MyMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       margin: EdgeInsets.all(8.0),
+      color: Colors.lightBlue[50],
+      shadowColor: Colors.green[700],
       child: InkWell(
         onTap: link,
-        splashColor: Colors.blueAccent,
+        splashColor: Colors.lightBlue[100],
         child: Center(
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -82,7 +98,8 @@ class MyMenu extends StatelessWidget {
               Text(
                 title,
                 style: new TextStyle(
-                  fontSize: 17.0,
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
             ],

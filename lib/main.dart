@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:fluid_bottom_nav_bar/pages/home.dart';
 import 'package:fluid_bottom_nav_bar/pages/search.dart';
 import 'package:fluid_bottom_nav_bar/pages/list.dart';
 import 'package:fluid_bottom_nav_bar/pages/examplefile.dart';
 import 'package:fluid_bottom_nav_bar/pages/resources.dart';
+
+import 'package:fluid_bottom_nav_bar/pages/newinterfacehome.dart';
 
 void main() => runApp(MyApp());
 
@@ -14,6 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Working With Smile: Python App',
       home: MyHomePage(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
@@ -26,11 +30,14 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int pageindex = 0;
 
-  final DialogsExample _listexamples = DialogsExample();
+  //final DialogsExample _listexamples = DialogsExample();
   final Search _searchbarcode = Search();
   final ListBodyLayout _list = ListBodyLayout();
   final ExamplesNew _newexamples = ExamplesNew();
   final ResourceList _resourceList = ResourceList();
+
+  final NewHome _newHome = NewHome();
+
   Widget _showPage = DialogsExample();
 
   Widget _pageChooser(int page) {
@@ -42,7 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
         return _newexamples;
         break;
       case 2:
-        return _listexamples;
+        return _newHome;
         break;
       case 3:
         return _searchbarcode;
@@ -67,6 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Center(
           child: Text("Working With Smile: Python"),
         ),
+        /*
         actions: <Widget>[
           PopupMenuButton(
             itemBuilder: (BuildContext context) {
@@ -90,7 +98,34 @@ class _MyHomePageState extends State<MyHomePage> {
             },
             icon: Icon(Icons.supervised_user_circle, color: Colors.white),
           ),
-        ],
+        ],*/
+      ),
+      drawer: new Drawer(
+        child: ListView(
+          children: <Widget>[
+            ListTile(
+              leading: Icon(Icons.photo_library),
+              title: Text("Send Us Feedback"),
+              onTap: _mailto,
+            ),
+            ListTile(
+              leading: Icon(Icons.library_add),
+              title: Text("About Us"),
+            ),
+            ListTile(
+              leading: Icon(Icons.library_music),
+              title: Text("Rate Us"),
+            ),
+            ListTile(
+              leading: Icon(Icons.video_library),
+              title: Text("Privacy Policy"),
+            ),
+            ListTile(
+              leading: Icon(Icons.local_library),
+              title: Text("Terms & Conditions"),
+            ),
+          ],
+        ),
       ),
       body: Container(
         color: Colors.white,
@@ -100,14 +135,15 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       bottomNavigationBar: CurvedNavigationBar(
         color: Colors.blue[400],
-        backgroundColor: Colors.white,
-        buttonBackgroundColor: Colors.blue[100],
+        backgroundColor: Colors.blue[100],
+        buttonBackgroundColor: Colors.blue[400],
         height: 55,
         items: <Widget>[
           Icon(
             Icons.ondemand_video,
             size: 40,
             color: Colors.black,
+            semanticLabel: "YouTube",
           ),
           Icon(
             Icons.code,
@@ -144,5 +180,17 @@ class _MyHomePageState extends State<MyHomePage> {
         animationCurve: Curves.bounceInOut,
       ),
     );
+  }
+}
+
+_mailto() async {
+  const url = 'mailto:workingwithsmile@gmail.com?subject=App Feedback';
+  if (await canLaunch(url)) {
+    await launch(
+      url,
+      forceWebView: false,
+    );
+  } else {
+    throw 'Could not launch $url';
   }
 }

@@ -45,6 +45,13 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
+  assets:
+   - lib/assets/PyLogo.jpeg
+   - lib/assets/SF-Pro-Text-Regular.otf
+   - lib/assets/SF-Pro-Text-Bold.otf
+   - lib/assets/Calibre Semibold.otf
+   - lib/assets/custom_icons.ttf
+
   # To add assets to your application, add an assets section, like this:
   # assets:
   #  - images/a_dot_burr.jpeg

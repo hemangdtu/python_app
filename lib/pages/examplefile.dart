@@ -9,39 +9,52 @@ class ExamplesNew extends StatelessWidget {
 }
 
 Widget _myListView(BuildContext context) {
-  return ListView(
-    children: <Widget>[
-      ListTile(
-        title: Text('Hello, World!'),
-        trailing: Icon(Icons.play_circle_filled),
-        onTap: _launchURL1,
+  return Container(
+    decoration: BoxDecoration(
+      gradient: LinearGradient(
+        colors: [
+          Colors.blue[100],
+          Colors.blue[300],
+        ],
+        begin: Alignment.bottomCenter,
+        end: Alignment.topCenter,
+        tileMode: TileMode.clamp,
       ),
-      ListTile(
-        title: Text('Add Two Numbers'),
-        trailing: Icon(Icons.play_circle_filled),
-        onTap: _launchURL2,
-      ),
-      ListTile(
-        title: Text('Square Root'),
-        trailing: Icon(Icons.play_circle_filled),
-        onTap: _launchURL3,
-      ),
-      ListTile(
-        title: Text('Area of Triangle'),
-        trailing: Icon(Icons.play_circle_filled),
-        onTap: _launchURL4,
-      ),
-      ListTile(
-        title: Text('Swap Two Variables'),
-        trailing: Icon(Icons.play_circle_filled),
-        onTap: _launchURL5,
-      ),
-      ListTile(
-        title: Text('Find Roots of Quadratic Equations'),
-        trailing: Icon(Icons.play_circle_filled),
-        onTap: _launchURL6,
-      ),
-    ],
+    ),
+    child: ListView(
+      children: <Widget>[
+        ListTile(
+          title: Text('Hello, World!'),
+          trailing: Icon(Icons.play_circle_filled),
+          onTap: _launchURL1,
+        ),
+        ListTile(
+          title: Text('Add Two Numbers'),
+          trailing: Icon(Icons.play_circle_filled),
+          onTap: _launchURL2,
+        ),
+        ListTile(
+          title: Text('Square Root'),
+          trailing: Icon(Icons.play_circle_filled),
+          onTap: _launchURL3,
+        ),
+        ListTile(
+          title: Text('Area of Triangle'),
+          trailing: Icon(Icons.play_circle_filled),
+          onTap: _launchURL4,
+        ),
+        ListTile(
+          title: Text('Swap Two Variables'),
+          trailing: Icon(Icons.play_circle_filled),
+          onTap: _launchURL5,
+        ),
+        ListTile(
+          title: Text('Find Roots of Quadratic Equations'),
+          trailing: Icon(Icons.play_circle_filled),
+          onTap: _launchURL6,
+        ),
+      ],
+    ),
   );
 }
 
