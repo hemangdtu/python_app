@@ -1,13 +1,19 @@
+//import 'package:fluid_bottom_nav_bar/pages/customIcons.dart';
 import 'package:flutter/material.dart';
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:ff_navigation_bar/ff_navigation_bar.dart';
+//import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+//import 'package:fancy_bottom_navigation/fancy_bottom_navigation.dart';
+
 import 'package:url_launcher/url_launcher.dart';
-import 'package:fluid_bottom_nav_bar/pages/home.dart';
+
+//import 'package:fluid_bottom_nav_bar/pages/home.dart';
 import 'package:fluid_bottom_nav_bar/pages/search.dart';
 import 'package:fluid_bottom_nav_bar/pages/list.dart';
 import 'package:fluid_bottom_nav_bar/pages/examplefile.dart';
 import 'package:fluid_bottom_nav_bar/pages/resources.dart';
-
 import 'package:fluid_bottom_nav_bar/pages/newinterfacehome.dart';
+//import 'package:fluid_bottom_nav_bar/pages/test.dart';
+import 'package:fluid_bottom_nav_bar/pages/partofhome.dart';
 
 void main() => runApp(MyApp());
 
@@ -29,16 +35,19 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int pageindex = 0;
+  int currentPage = 0;
+  int selectedIndex = 2;
 
   //final DialogsExample _listexamples = DialogsExample();
   final Search _searchbarcode = Search();
   final ListBodyLayout _list = ListBodyLayout();
   final ExamplesNew _newexamples = ExamplesNew();
   final ResourceList _resourceList = ResourceList();
+  //final NewHome _newHome = NewHome();
+  final HrList _newHome = HrList();
+  //final TestApp _testApp = TestApp();
 
-  final NewHome _newHome = NewHome();
-
-  Widget _showPage = DialogsExample();
+  Widget _showPage = NewHome();
 
   Widget _pageChooser(int page) {
     switch (page) {
@@ -133,6 +142,92 @@ class _MyHomePageState extends State<MyHomePage> {
         width: MediaQuery.of(context).size.width,
         child: _showPage,
       ),
+      bottomNavigationBar: FFNavigationBar(
+        theme: FFNavigationBarTheme(
+          barBackgroundColor: Colors.white,
+          selectedItemBorderColor: Colors.transparent,
+          selectedItemBackgroundColor: Colors.green,
+          selectedItemIconColor: Colors.white,
+          selectedItemLabelColor: Colors.black,
+          showSelectedItemShadow: false,
+          barHeight: 70,
+        ),
+        selectedIndex: selectedIndex,
+        onSelectTab: (index) {
+          setState(() {
+            selectedIndex = index;
+            _showPage = _pageChooser(index);
+          });
+        },
+        items: [
+          FFNavigationBarItem(
+            iconData: Icons.ondemand_video,
+            label: 'YouTube',
+            itemWidth: 20.0,
+            selectedBackgroundColor: Colors.red,
+            animationDuration: Duration(milliseconds: 100,),
+          ),
+          FFNavigationBarItem(
+            iconData: Icons.code,
+            label: 'Practice Problems',
+            itemWidth: 20.0,
+            animationDuration: Duration(milliseconds: 100,),
+            selectedBackgroundColor: Colors.orange,
+          ),
+          FFNavigationBarItem(
+            iconData: Icons.featured_play_list,
+            label: 'Tutorials',
+            itemWidth: 20.0,
+            animationDuration: Duration(milliseconds: 100,),
+            selectedBackgroundColor: Colors.purple,
+          ),
+          FFNavigationBarItem(
+            iconData: Icons.note,
+            label: 'Q/A',
+            itemWidth: 20.0,
+            animationDuration: Duration(milliseconds: 100,),
+            selectedBackgroundColor: Colors.black87,
+          ),
+          FFNavigationBarItem(
+            iconData: Icons.book,
+            label: 'Resources',
+            itemWidth: 20.0,            
+            animationDuration: Duration(milliseconds: 100,),
+            selectedBackgroundColor: Colors.blue,
+          ),
+        ],
+      ),
+      /*
+      bottomNavigationBar: FancyBottomNavigation(
+        tabs: [
+          TabData(
+            iconData: Icons.subscriptions,
+            title: "YouTube",
+          ),
+          TabData(
+            iconData: Icons.code,
+            title: "Practice Problems",
+          ),
+          TabData(
+            iconData: Icons.home,
+            title: "Home",
+            onclick: () {NewHome();},
+          ),
+          TabData(
+            iconData: Icons.search,
+            title: "Search",
+          ),
+          
+        ],
+        initialSelection: 2,
+        onTabChangedListener: (position) {
+        setState(() {
+          currentPage = position;
+        });
+    },
+      ),
+*/
+      /*
       bottomNavigationBar: CurvedNavigationBar(
         color: Colors.blue[400],
         backgroundColor: Colors.blue[100],
@@ -179,6 +274,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         animationCurve: Curves.bounceInOut,
       ),
+      */
     );
   }
 }

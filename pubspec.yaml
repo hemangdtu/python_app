@@ -22,6 +22,9 @@ dependencies:
   youtube_player_flutter: ^6.1.1
   http: ^0.12.1
   url_launcher: ^5.4.10
+
+  ff_navigation_bar: ^0.1.5
+
   flutter:
     sdk: flutter
 
@@ -47,10 +50,23 @@ flutter:
 
   assets:
    - lib/assets/PyLogo.jpeg
-   - lib/assets/SF-Pro-Text-Regular.otf
-   - lib/assets/SF-Pro-Text-Bold.otf
-   - lib/assets/Calibre Semibold.otf
-   - lib/assets/custom_icons.ttf
+
+  fonts:
+    - family: SF-Pro-Text-Regular
+      fonts:
+        - asset: lib/assets/SF-Pro-Text-Regular.otf
+
+    - family: SF-Pro-Text-Bold
+      fonts:
+        - asset: lib/assets/SF-Pro-Text-Bold.otf
+
+    - family: Calibre-Semibold
+      fonts:
+        - asset: lib/assets/Calibre Semibold.otf
+
+    - family: CustomIcons
+      fonts:
+        - asset: lib/assets/custom_icons.ttf
 
   # To add assets to your application, add an assets section, like this:
   # assets:
