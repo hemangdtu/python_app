@@ -13,8 +13,11 @@ Widget _myListView(BuildContext context) {
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            Colors.blue[100],
-            Colors.blue[300],
+            // Colors.blue[100],
+            // Colors.blue[300],
+            Color(0xFF7E9BE0),
+            //Color(0xFF1b1e44),
+            Color(0xFF2E8BC0),
           ],
           begin: Alignment.bottomCenter,
           end: Alignment.topCenter,

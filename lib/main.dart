@@ -1,19 +1,12 @@
-//import 'package:fluid_bottom_nav_bar/pages/customIcons.dart';
 import 'package:flutter/material.dart';
-import 'package:ff_navigation_bar/ff_navigation_bar.dart';
-//import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-//import 'package:fancy_bottom_navigation/fancy_bottom_navigation.dart';
-
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-//import 'package:fluid_bottom_nav_bar/pages/home.dart';
 import 'package:fluid_bottom_nav_bar/pages/search.dart';
-import 'package:fluid_bottom_nav_bar/pages/list.dart';
-import 'package:fluid_bottom_nav_bar/pages/examplefile.dart';
+import 'package:fluid_bottom_nav_bar/pages/youtube_list.dart';
+import 'package:fluid_bottom_nav_bar/pages/examples_list.dart';
 import 'package:fluid_bottom_nav_bar/pages/resources.dart';
-import 'package:fluid_bottom_nav_bar/pages/newinterfacehome.dart';
-//import 'package:fluid_bottom_nav_bar/pages/test.dart';
-import 'package:fluid_bottom_nav_bar/pages/partofhome.dart';
+import 'package:fluid_bottom_nav_bar/pages/home_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -47,7 +40,8 @@ class _MyHomePageState extends State<MyHomePage> {
   final HrList _newHome = HrList();
   //final TestApp _testApp = TestApp();
 
-  Widget _showPage = NewHome();
+  //Widget _showPage = NewHome();
+  Widget _showPage = HrList();
 
   Widget _pageChooser(int page) {
     switch (page) {
@@ -79,9 +73,11 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue[400],
-        title: Center(
-          child: Text("Working With Smile: Python"),
+        backgroundColor: Color(0xFF2C2D95),
+        title: Text("Working With Smile: Python"),
+        centerTitle: true,
+        iconTheme: IconThemeData(
+          color: Colors.white,
         ),
         /*
         actions: <Widget>[
@@ -142,6 +138,8 @@ class _MyHomePageState extends State<MyHomePage> {
         width: MediaQuery.of(context).size.width,
         child: _showPage,
       ),
+
+      /*
       bottomNavigationBar: FFNavigationBar(
         theme: FFNavigationBarTheme(
           barBackgroundColor: Colors.white,
@@ -197,6 +195,8 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ],
       ),
+      */
+
       /*
       bottomNavigationBar: FancyBottomNavigation(
         tabs: [
@@ -227,38 +227,40 @@ class _MyHomePageState extends State<MyHomePage> {
     },
       ),
 */
-      /*
+
       bottomNavigationBar: CurvedNavigationBar(
-        color: Colors.blue[400],
-        backgroundColor: Colors.blue[100],
-        buttonBackgroundColor: Colors.blue[400],
-        height: 55,
+        // color: Colors.blue[400],
+        color: Color(0xFF2C2D95),
+        // backgroundColor: Colors.blue[100],
+        backgroundColor: Color(0xFF2C2D95),
+        // buttonBackgroundColor: Colors.blue[400],
+        height: 54,
         items: <Widget>[
           Icon(
             Icons.ondemand_video,
             size: 40,
-            color: Colors.black,
+            color: Colors.white,
             semanticLabel: "YouTube",
           ),
           Icon(
             Icons.code,
-            size: 40,
-            color: Colors.black,
+            size: 50,
+            color: Colors.white,
           ),
           Icon(
-            Icons.home,
-            size: 40,
-            color: Colors.black,
+            Icons.featured_play_list,
+            size: 50,
+            color: Colors.white,
           ),
           Icon(
             Icons.search,
-            size: 40,
-            color: Colors.black,
+            size: 50,
+            color: Colors.white,
           ),
           Icon(
             Icons.book,
-            size: 40,
-            color: Colors.black,
+            size: 50,
+            color: Colors.white,
           ),
         ],
         onTap: (int tappedIndex) {
@@ -274,7 +276,6 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         animationCurve: Curves.bounceInOut,
       ),
-      */
     );
   }
 }
