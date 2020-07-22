@@ -1,48 +1,31 @@
 import 'package:flutter/material.dart';
 
 class HorizontalList extends StatelessWidget {
+  // ignore: non_constant_identifier_names
+  final List<Widget> list_data;
+
+  // ignore: non_constant_identifier_names
+  HorizontalList({this.list_data});
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 120.0,
+      height: 122.0,
       child: ListView(
         scrollDirection: Axis.horizontal,
-        children: <Widget>[
-          ModuleOne(
-            image_location: "a",
-            image_caption: "b",
-          ),
-          ModuleOne(
-            image_location: "a",
-            image_caption: "b",
-          ),
-          ModuleOne(
-            image_location: "a",
-            image_caption: "b",
-          ),
-          ModuleOne(
-            image_location: "a",
-            image_caption: "b",
-          ),
-          ModuleOne(
-            image_location: "a",
-            image_caption: "b",
-          ),
-          ModuleOne(
-            image_location: "a",
-            image_caption: "b",
-          ),
-        ],
+        children: list_data,
       ),
     );
   }
 }
 
-class ModuleOne extends StatelessWidget {
+class ListElement extends StatelessWidget {
+  // ignore: non_constant_identifier_names
   final String image_location;
+  // ignore: non_constant_identifier_names
   final String image_caption;
 
-  ModuleOne({this.image_location, this.image_caption});
+  // ignore: non_constant_identifier_names
+  ListElement({this.image_location, this.image_caption});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -59,16 +42,17 @@ class ModuleOne extends StatelessWidget {
                 scale: 1,
               ),
             ),
-            // subtitle: Text(image_caption),
-            // title: Icon(
-            //   Icons.access_alarm,
-            //   size: 90,
-            // ),
             subtitle: Container(
               alignment: Alignment.topCenter,
-              child: Text(
-                "Introduction",
-                style: TextStyle(fontSize: 18),
+              child: Padding(
+                padding: const EdgeInsets.only(top: 4.0),
+                child: Text(
+                  image_caption,
+                  style: TextStyle(
+                    fontSize: 19,
+                    fontFamily: "Calibre-Semibold",
+                  ),
+                ),
               ),
             ),
           ),

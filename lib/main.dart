@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import 'package:fluid_bottom_nav_bar/pages/search.dart';
+//import 'package:fluid_bottom_nav_bar/pages/search.dart';
 import 'package:fluid_bottom_nav_bar/pages/youtube_list.dart';
 import 'package:fluid_bottom_nav_bar/pages/examples_list.dart';
 import 'package:fluid_bottom_nav_bar/pages/resources.dart';
@@ -31,17 +31,13 @@ class _MyHomePageState extends State<MyHomePage> {
   int currentPage = 0;
   int selectedIndex = 2;
 
-  //final DialogsExample _listexamples = DialogsExample();
-  final Search _searchbarcode = Search();
+  //final Search _searchbarcode = Search();
   final ListBodyLayout _list = ListBodyLayout();
   final ExamplesNew _newexamples = ExamplesNew();
   final ResourceList _resourceList = ResourceList();
-  //final NewHome _newHome = NewHome();
-  final HrList _newHome = HrList();
-  //final TestApp _testApp = TestApp();
+  final HomeScreen _newHome = HomeScreen();
 
-  //Widget _showPage = NewHome();
-  Widget _showPage = HrList();
+  Widget _showPage = HomeScreen();
 
   Widget _pageChooser(int page) {
     switch (page) {
@@ -55,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
         return _newHome;
         break;
       case 3:
-        return _searchbarcode;
+        //return _searchbarcode;
         break;
       case 4:
         return _resourceList;
@@ -79,31 +75,6 @@ class _MyHomePageState extends State<MyHomePage> {
         iconTheme: IconThemeData(
           color: Colors.white,
         ),
-        /*
-        actions: <Widget>[
-          PopupMenuButton(
-            itemBuilder: (BuildContext context) {
-              return [
-                PopupMenuItem(
-                  child: Text("Send Us Feedback"),
-                ),
-                PopupMenuItem(
-                  child: Text("Terms & Conditions"),
-                ),
-                PopupMenuItem(
-                  child: Text("Privacy Policy"),
-                ),
-                PopupMenuItem(
-                  child: Text("Rate Us"),
-                ),
-                PopupMenuItem(
-                  child: Text("About Us"),
-                ),
-              ];
-            },
-            icon: Icon(Icons.supervised_user_circle, color: Colors.white),
-          ),
-        ],*/
       ),
       drawer: new Drawer(
         child: ListView(
@@ -133,134 +104,48 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       body: Container(
-        color: Colors.white,
+        //color: Colors.white,
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         child: _showPage,
       ),
-
-      /*
-      bottomNavigationBar: FFNavigationBar(
-        theme: FFNavigationBarTheme(
-          barBackgroundColor: Colors.white,
-          selectedItemBorderColor: Colors.transparent,
-          selectedItemBackgroundColor: Colors.green,
-          selectedItemIconColor: Colors.white,
-          selectedItemLabelColor: Colors.black,
-          showSelectedItemShadow: false,
-          barHeight: 70,
-        ),
-        selectedIndex: selectedIndex,
-        onSelectTab: (index) {
-          setState(() {
-            selectedIndex = index;
-            _showPage = _pageChooser(index);
-          });
-        },
-        items: [
-          FFNavigationBarItem(
-            iconData: Icons.ondemand_video,
-            label: 'YouTube',
-            itemWidth: 20.0,
-            selectedBackgroundColor: Colors.red,
-            animationDuration: Duration(milliseconds: 100,),
-          ),
-          FFNavigationBarItem(
-            iconData: Icons.code,
-            label: 'Practice Problems',
-            itemWidth: 20.0,
-            animationDuration: Duration(milliseconds: 100,),
-            selectedBackgroundColor: Colors.orange,
-          ),
-          FFNavigationBarItem(
-            iconData: Icons.featured_play_list,
-            label: 'Tutorials',
-            itemWidth: 20.0,
-            animationDuration: Duration(milliseconds: 100,),
-            selectedBackgroundColor: Colors.purple,
-          ),
-          FFNavigationBarItem(
-            iconData: Icons.note,
-            label: 'Q/A',
-            itemWidth: 20.0,
-            animationDuration: Duration(milliseconds: 100,),
-            selectedBackgroundColor: Colors.black87,
-          ),
-          FFNavigationBarItem(
-            iconData: Icons.book,
-            label: 'Resources',
-            itemWidth: 20.0,            
-            animationDuration: Duration(milliseconds: 100,),
-            selectedBackgroundColor: Colors.blue,
-          ),
-        ],
-      ),
-      */
-
-      /*
-      bottomNavigationBar: FancyBottomNavigation(
-        tabs: [
-          TabData(
-            iconData: Icons.subscriptions,
-            title: "YouTube",
-          ),
-          TabData(
-            iconData: Icons.code,
-            title: "Practice Problems",
-          ),
-          TabData(
-            iconData: Icons.home,
-            title: "Home",
-            onclick: () {NewHome();},
-          ),
-          TabData(
-            iconData: Icons.search,
-            title: "Search",
-          ),
-          
-        ],
-        initialSelection: 2,
-        onTabChangedListener: (position) {
-        setState(() {
-          currentPage = position;
-        });
-    },
-      ),
-*/
-
       bottomNavigationBar: CurvedNavigationBar(
-        // color: Colors.blue[400],
         color: Color(0xFF2C2D95),
+        //color: Color(0xFF2C2D95),
         // backgroundColor: Colors.blue[100],
-        backgroundColor: Color(0xFF2C2D95),
-        // buttonBackgroundColor: Colors.blue[400],
+        backgroundColor: Color(0xFF7E9BE0),
+        buttonBackgroundColor: Color(0xFF3538B5),
         height: 54,
         items: <Widget>[
           Icon(
             Icons.ondemand_video,
             size: 40,
             color: Colors.white,
-            semanticLabel: "YouTube",
+            semanticLabel: "YouTube Video Tutorials",
           ),
           Icon(
             Icons.code,
-            size: 50,
+            size: 40,
             color: Colors.white,
+            semanticLabel: "Examples",
           ),
           Icon(
-            Icons.featured_play_list,
-            size: 50,
+            Icons.apps,
+            size: 40,
             color: Colors.white,
+            semanticLabel: "Notes and Tutorials",
           ),
           Icon(
-            Icons.search,
-            size: 50,
+            Icons.assignment,
+            size: 40,
             color: Colors.white,
+            semanticLabel: "Questions and Answers",
           ),
           Icon(
             Icons.book,
-            size: 50,
+            size: 40,
             color: Colors.white,
+            semanticLabel: "Resources",
           ),
         ],
         onTap: (int tappedIndex) {
@@ -272,9 +157,9 @@ class _MyHomePageState extends State<MyHomePage> {
         },
         index: 2,
         animationDuration: Duration(
-          milliseconds: 200,
+          milliseconds: 500,
         ),
-        animationCurve: Curves.bounceInOut,
+        animationCurve: Curves.easeInToLinear, //bounceInOut elasticInOut
       ),
     );
   }

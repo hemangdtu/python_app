@@ -11,21 +11,21 @@ class ResourceList extends StatelessWidget {
 Widget _resourcesList(BuildContext context) {
   return Container(
     decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            // Colors.blue[100],
-            // Colors.blue[300],
-            Color(0xFF1b1e44),
-            Color(0xFF2E8BC0),
-          ],
-          begin: Alignment.bottomCenter,
-          end: Alignment.topCenter,
-          tileMode: TileMode.clamp,
-        ),
+      gradient: LinearGradient(
+        colors: [
+          // Colors.blue[100],
+          // Colors.blue[300],
+          Color(0xFF7E9BE0),
+          //Color(0xFF1b1e44),
+          Color(0xFF2E8BC0),
+          // Color(0xFF1b1e44),
+          // Color(0xFF2E8BC0),
+        ],
+        begin: Alignment.bottomCenter,
+        end: Alignment.topCenter,
+        tileMode: TileMode.clamp,
       ),
-
-
-
+    ),
     padding: EdgeInsets.all(30.0),
     child: GridView.count(
       crossAxisCount: 2,
@@ -123,6 +123,7 @@ _launchURLB1() async {
     throw 'Could not launch $url';
   }
 }
+
 _launchURLB2() async {
   const url = 'https://www.youtube.com/watch?v=bqyJRQR_Ml4';
   if (await canLaunch(url)) {
@@ -134,6 +135,7 @@ _launchURLB2() async {
     throw 'Could not launch $url';
   }
 }
+
 _launchURLB3() async {
   const url = 'https://www.youtube.com/watch?v=bqyJRQR_Ml4';
   if (await canLaunch(url)) {
@@ -145,6 +147,7 @@ _launchURLB3() async {
     throw 'Could not launch $url';
   }
 }
+
 _launchURLB4() async {
   const url = 'https://www.youtube.com/watch?v=bqyJRQR_Ml4';
   if (await canLaunch(url)) {
@@ -156,6 +159,7 @@ _launchURLB4() async {
     throw 'Could not launch $url';
   }
 }
+
 _launchURLB5() async {
   const url = 'https://www.youtube.com/watch?v=bqyJRQR_Ml4';
   if (await canLaunch(url)) {
@@ -167,6 +171,7 @@ _launchURLB5() async {
     throw 'Could not launch $url';
   }
 }
+
 _launchURLB6() async {
   const url = 'https://www.youtube.com/watch?v=bqyJRQR_Ml4';
   if (await canLaunch(url)) {

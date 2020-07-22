@@ -62,10 +62,6 @@ flutter:
       fonts:
         - asset: lib/assets/Calibre Semibold.otf
 
-    - family: CustomIcons
-      fonts:
-        - asset: lib/assets/custom_icons.ttf
-
   # To add assets to your application, add an assets section, like this:
   # assets:
   #  - images/a_dot_burr.jpeg

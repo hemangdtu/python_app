@@ -10,52 +10,103 @@ class ListBodyLayout extends StatelessWidget {
 
 Widget _myListView(BuildContext context) {
   return Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            // Colors.blue[100],
-            // Colors.blue[300],
-            Color(0xFF7E9BE0),
-            //Color(0xFF1b1e44),
-            Color(0xFF2E8BC0),
-          ],
-          begin: Alignment.bottomCenter,
-          end: Alignment.topCenter,
-          tileMode: TileMode.clamp,
-        ),
+    decoration: BoxDecoration(
+      gradient: LinearGradient(
+        colors: [
+          // Colors.blue[100],
+          // Colors.blue[300],
+          Color(0xFF7E9BE0),
+          //Color(0xFF1b1e44),
+          Color(0xFF2E8BC0),
+        ],
+        begin: Alignment.bottomCenter,
+        end: Alignment.topCenter,
+        tileMode: TileMode.clamp,
       ),
+    ),
+    child: Padding(
+      padding: const EdgeInsets.all(6.0),
       child: ListView(
         children: <Widget>[
-          ListElement(
+          ClipRRect(
+            borderRadius: BorderRadius.circular(50),
+            child: Container(
+              color: Color(0xFF3538B5),
+              child: ListTile(
+                leading: Image.network(
+                    "https://cdn.iconscout.com/icon/free/png-256/youtube-85-226402.png"),
+                title: Text(
+                  "Youtube Videos",
+                  style: TextStyle(
+                    fontFamily: "SF-Pro-Text-Regular",
+                    //fontWeight: FontWeight.bold,
+                    fontSize: 30,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ),
+          ),
+          VideoListElement(
             title: "Overview of Python Programming",
             link: _launchURL1,
           ),
-          ListElement(
+          VideoListElement(
             title: "Datatypes in Python Programming",
             link: _launchURL2,
           ),
-          ListElement(
+          VideoListElement(
             title: "Creating Variables in Python Programming",
             link: _launchURL3,
           ),
-          ListElement(
+          VideoListElement(
             title: "print( ) in Python Programming",
             link: _launchURL4,
           ),
-          ListElement(
+          VideoListElement(
             title: "input( ) in Python Programming",
             link: _launchURL5,
           ),
-          ListElement(
+          VideoListElement(
+            title: "Operators in Python Programming",
+            link: _launchURL6,
+          ),
+          VideoListElement(
+            title: "Operators in Python Programming",
+            link: _launchURL6,
+          ),
+          VideoListElement(
+            title: "Operators in Python Programming",
+            link: _launchURL6,
+          ),
+          VideoListElement(
+            title: "Operators in Python Programming",
+            link: _launchURL6,
+          ),
+          VideoListElement(
+            title: "Operators in Python Programming",
+            link: _launchURL6,
+          ),
+          VideoListElement(
+            title: "Operators in Python Programming",
+            link: _launchURL6,
+          ),
+          VideoListElement(
+            title: "Operators in Python Programming",
+            link: _launchURL6,
+          ),
+          VideoListElement(
             title: "Operators in Python Programming",
             link: _launchURL6,
           ),
         ],
-      ));
+      ),
+    ),
+  );
 }
 
-class ListElement extends StatelessWidget {
-  ListElement({this.title, this.link});
+class VideoListElement extends StatelessWidget {
+  VideoListElement({this.title, this.link});
 
   final String title;
   final Function link;
@@ -71,7 +122,7 @@ class ListElement extends StatelessWidget {
       ),
       trailing: Icon(Icons.play_circle_filled),
       onTap: link,
-      subtitle: Text("YouTube Link"),
+      //subtitle: Text("YouTube Link"),
     );
   }
 }

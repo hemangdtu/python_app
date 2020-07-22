@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:fluid_bottom_nav_bar/pages/youtube_list.dart';
 
 class ExamplesNew extends StatelessWidget {
   @override
@@ -15,47 +16,103 @@ Widget _myListView(BuildContext context) {
         colors: [
           // Colors.blue[100],
           // Colors.blue[300],
-          Color(0xFF1b1e44),
-            Color(0xFF2E8BC0),
+          Color(0xFF7E9BE0),
+          //Color(0xFF1b1e44),
+          Color(0xFF2E8BC0),
+          // Color(0xFF1b1e44),
+          //   Color(0xFF2E8BC0),
         ],
         begin: Alignment.bottomCenter,
         end: Alignment.topCenter,
         tileMode: TileMode.clamp,
       ),
     ),
-    child: ListView(
-      children: <Widget>[
-        ListTile(
-          title: Text('Hello, World!'),
-          trailing: Icon(Icons.play_circle_filled),
-          onTap: _launchURL1,
-        ),
-        ListTile(
-          title: Text('Add Two Numbers'),
-          trailing: Icon(Icons.play_circle_filled),
-          onTap: _launchURL2,
-        ),
-        ListTile(
-          title: Text('Square Root'),
-          trailing: Icon(Icons.play_circle_filled),
-          onTap: _launchURL3,
-        ),
-        ListTile(
-          title: Text('Area of Triangle'),
-          trailing: Icon(Icons.play_circle_filled),
-          onTap: _launchURL4,
-        ),
-        ListTile(
-          title: Text('Swap Two Variables'),
-          trailing: Icon(Icons.play_circle_filled),
-          onTap: _launchURL5,
-        ),
-        ListTile(
-          title: Text('Find Roots of Quadratic Equations'),
-          trailing: Icon(Icons.play_circle_filled),
-          onTap: _launchURL6,
-        ),
-      ],
+    child: Padding(
+      padding: const EdgeInsets.all(6.0),
+      child: ListView(
+        children: <Widget>[
+          ClipRRect(
+            borderRadius: BorderRadius.circular(50),
+            child: Container(
+              // decoration: BoxDecoration(
+              //   gradient: LinearGradient(
+              //     colors: [
+              //       Colors.red[900],
+              //       Colors.red[600],
+              //       Colors.red,
+              //       Colors.red[600],
+              //       Colors.red[900],
+              //     ],
+              //   ),
+              // ),
+              color: Color(0xFF3538B5),
+              child: ListTile(
+                leading: Image.network(
+                  "https://qph.fs.quoracdn.net/main-qimg-011de5342604fe4790a86357beec5ee5.webp",
+                  scale: 11.7,
+                ),
+                title: Text(
+                  "Coding Examples",
+                  style: TextStyle(
+                    fontFamily: "SF-Pro-Text-Regular",
+                    //fontWeight: FontWeight.bold,
+                    fontSize: 30,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ),
+          ),
+          VideoListElement(
+            title: 'Hello, World!',
+            link: _launchURL1,
+          ),
+          VideoListElement(
+            title: 'Add Two Numbers',
+            link: _launchURL2,
+          ),
+          VideoListElement(
+            title: 'Square Root',
+            link: _launchURL3,
+          ),
+          VideoListElement(
+            title: 'Area of Triangle',
+            link: _launchURL4,
+          ),
+          VideoListElement(
+            title: 'Swap Two Variables',
+            link: _launchURL5,
+          ),
+          VideoListElement(
+            title: 'Find Roots of Quadratic Equations',
+            link: _launchURL6,
+          ),
+          VideoListElement(
+            title: 'Find Roots of Quadratic Equations',
+            link: _launchURL6,
+          ),
+          VideoListElement(
+            title: 'Find Roots of Quadratic Equations',
+            link: _launchURL6,
+          ),
+          VideoListElement(
+            title: 'Find Roots of Quadratic Equations',
+            link: _launchURL6,
+          ),
+          VideoListElement(
+            title: 'Find Roots of Quadratic Equations',
+            link: _launchURL6,
+          ),
+          VideoListElement(
+            title: 'Find Roots of Quadratic Equations',
+            link: _launchURL6,
+          ),
+          VideoListElement(
+            title: 'Find Roots of Quadratic Equations',
+            link: _launchURL6,
+          ),
+        ],
+      ),
     ),
   );
 }
