@@ -33,15 +33,16 @@ Widget _myListView(BuildContext context) {
             child: Container(
               color: Color(0xFF3538B5),
               child: ListTile(
-                leading: Image.network(
-                    "https://cdn.iconscout.com/icon/free/png-256/youtube-85-226402.png"),
-                title: Text(
-                  "Youtube Videos",
-                  style: TextStyle(
-                    fontFamily: "SF-Pro-Text-Regular",
-                    //fontWeight: FontWeight.bold,
-                    fontSize: 30,
-                    color: Colors.white,
+                leading: Image.asset("lib/assets/yt_logo.png"),
+                title: Center(
+                  child: Text(
+                    "Youtube Videos",
+                    style: TextStyle(
+                      fontFamily: "SF-Pro-Text-Regular",
+                      //fontWeight: FontWeight.bold,
+                      fontSize: 30,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import 'package:fluid_bottom_nav_bar/pages/qna_page.dart';
 //import 'package:fluid_bottom_nav_bar/pages/search.dart';
 import 'package:fluid_bottom_nav_bar/pages/youtube_list.dart';
 import 'package:fluid_bottom_nav_bar/pages/examples_list.dart';
@@ -31,7 +32,7 @@ class _MyHomePageState extends State<MyHomePage> {
   int currentPage = 0;
   int selectedIndex = 2;
 
-  //final Search _searchbarcode = Search();
+  final ContentPage _searchbarcode = ContentPage();
   final ListBodyLayout _list = ListBodyLayout();
   final ExamplesNew _newexamples = ExamplesNew();
   final ResourceList _resourceList = ResourceList();
@@ -51,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
         return _newHome;
         break;
       case 3:
-        //return _searchbarcode;
+        return _searchbarcode;
         break;
       case 4:
         return _resourceList;

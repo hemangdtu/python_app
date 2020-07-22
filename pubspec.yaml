@@ -29,12 +29,14 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
+  flutter_launcher_name: ^0.0.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-
+flutter_launcher_name:
+  name: "Working With Smile: Python"
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
@@ -48,6 +50,9 @@ flutter:
 
   assets:
    - lib/assets/PyLogo.jpeg
+   - lib/assets/python_logo.png
+   - lib/assets/yt_logo.png
+   - lib/assets/coding_logo.png
 
   fonts:
     - family: SF-Pro-Text-Regular

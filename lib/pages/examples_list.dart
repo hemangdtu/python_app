@@ -47,17 +47,19 @@ Widget _myListView(BuildContext context) {
               // ),
               color: Color(0xFF3538B5),
               child: ListTile(
-                leading: Image.network(
-                  "https://qph.fs.quoracdn.net/main-qimg-011de5342604fe4790a86357beec5ee5.webp",
+                leading: Image.asset(
+                  "lib/assets/coding_logo.png",
                   scale: 11.7,
                 ),
-                title: Text(
-                  "Coding Examples",
-                  style: TextStyle(
-                    fontFamily: "SF-Pro-Text-Regular",
-                    //fontWeight: FontWeight.bold,
-                    fontSize: 30,
-                    color: Colors.white,
+                title: Center(
+                  child: Text(
+                    "Coding Examples",
+                    style: TextStyle(
+                      fontFamily: "SF-Pro-Text-Regular",
+                      //fontWeight: FontWeight.bold,
+                      fontSize: 30,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ),

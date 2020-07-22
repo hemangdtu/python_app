@@ -26,7 +26,7 @@ Widget _resourcesList(BuildContext context) {
         tileMode: TileMode.clamp,
       ),
     ),
-    padding: EdgeInsets.all(30.0),
+    padding: EdgeInsets.only(top: 15.0, left: 30.0, right: 30.0),
     child: GridView.count(
       crossAxisCount: 2,
       children: <Widget>[
@@ -66,6 +66,18 @@ Widget _resourcesList(BuildContext context) {
           warna: Colors.cyan,
           link: _launchURLB6,
         ),
+        MyMenu(
+          title: "Book 6",
+          icon: Icons.bookmark_border,
+          warna: Colors.cyan,
+          link: _launchURLB6,
+        ),
+        MyMenu(
+          title: "Book 6",
+          icon: Icons.bookmark_border,
+          warna: Colors.cyan,
+          link: _launchURLB6,
+        ),
       ],
     ),
   );
@@ -82,6 +94,10 @@ class MyMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(30),
+      ),
+      elevation: 5,
       margin: EdgeInsets.all(8.0),
       color: Colors.lightBlue[50],
       shadowColor: Colors.green[700],
