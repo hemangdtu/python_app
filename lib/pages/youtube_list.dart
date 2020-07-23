@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:fluid_bottom_nav_bar/content/wavy_image_header.dart';
 
 class ListBodyLayout extends StatelessWidget {
   @override
@@ -28,25 +29,29 @@ Widget _myListView(BuildContext context) {
       padding: const EdgeInsets.all(6.0),
       child: ListView(
         children: <Widget>[
-          ClipRRect(
-            borderRadius: BorderRadius.circular(50),
-            child: Container(
-              color: Color(0xFF3538B5),
-              child: ListTile(
-                leading: Image.asset("lib/assets/yt_logo.png"),
-                title: Center(
-                  child: Text(
-                    "Youtube Videos",
-                    style: TextStyle(
-                      fontFamily: "SF-Pro-Text-Regular",
-                      //fontWeight: FontWeight.bold,
-                      fontSize: 30,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-              ),
-            ),
+          // ClipRRect(
+          //   borderRadius: BorderRadius.circular(50),
+          //   child: Container(
+          //     color: Color(0xFF3538B5),
+          //     child: ListTile(
+          //       leading: Image.asset("lib/assets/yt_logo.png"),
+          //       title: Center(
+          //         child: Text(
+          //           "Youtube Videos",
+          //           style: TextStyle(
+          //             fontFamily: "SF-Pro-Text-Regular",
+          //             //fontWeight: FontWeight.bold,
+          //             fontSize: 30,
+          //             color: Colors.white,
+          //           ),
+          //         ),
+          //       ),
+          //     ),
+          //   ),
+          // ),
+          WavyHeaderImage(
+            'lib/assets/yt_wallpaper.jpg',
+            imgScale: 5,
           ),
           VideoListElement(
             title: "Overview of Python Programming",

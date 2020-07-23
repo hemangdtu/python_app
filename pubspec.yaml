@@ -52,7 +52,9 @@ flutter:
    - lib/assets/PyLogo.jpeg
    - lib/assets/python_logo.png
    - lib/assets/yt_logo.png
+   - lib/assets/yt_wallpaper.jpg
    - lib/assets/coding_logo.png
+   - lib/assets/coding_wallpaper.jpg
 
   fonts:
     - family: SF-Pro-Text-Regular
