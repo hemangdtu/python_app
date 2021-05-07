@@ -1,113 +1,179 @@
 import 'package:flutter/material.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-void main() {
-  runApp(MyApp());
-}
+import 'package:python_app/pages/qna_page.dart';
+//import 'package:python_app/pages/search.dart';
+import 'package:python_app/pages/youtube_list.dart';
+import 'package:python_app/pages/examples_list.dart';
+import 'package:python_app/pages/resources.dart';
+import 'package:python_app/pages/home_screen.dart';
+
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      title: 'Working With Smile: Python App',
+      home: MyHomePage(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
-
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  int pageindex = 0;
+  int currentPage = 0;
+  int selectedIndex = 2;
 
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
+  final ContentPage _searchbarcode = ContentPage();
+  final ListBodyLayout _list = ListBodyLayout();
+  final ExamplesNew _newexamples = ExamplesNew();
+  final ResourceList _resourceList = ResourceList();
+  final HomeScreen _newHome = HomeScreen();
+
+  Widget _showPage = HomeScreen();
+
+  Widget _pageChooser(int page) {
+    switch (page) {
+      case 0:
+        return _list;
+        break;
+      case 1:
+        return _newexamples;
+        break;
+      case 2:
+        return _newHome;
+        break;
+      case 3:
+        return _searchbarcode;
+        break;
+      case 4:
+        return _resourceList;
+        break;
+      default:
+        return new Container(
+          child: Center(
+            child: new Text("No Page Found!"),
+          ),
+        );
+    }
   }
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
       appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+        backgroundColor: Color(0xFF2C2D95),
+        title: Text("Working With Smile: Python"),
+        centerTitle: true,
+        iconTheme: IconThemeData(
+          color: Colors.white,
+        ),
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
+      drawer: new Drawer(
+        child: ListView(
           children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
+            ListTile(
+              leading: Icon(Icons.photo_library),
+              title: Text("Send Us Feedback"),
+              onTap: _mailto,
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+            ListTile(
+              leading: Icon(Icons.library_add),
+              title: Text("About Us"),
+            ),
+            ListTile(
+              leading: Icon(Icons.library_music),
+              title: Text("Rate Us"),
+            ),
+            ListTile(
+              leading: Icon(Icons.video_library),
+              title: Text("Privacy Policy"),
+            ),
+            ListTile(
+              leading: Icon(Icons.local_library),
+              title: Text("Terms & Conditions"),
             ),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      body: Container(
+        //color: Colors.white,
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        child: _showPage,
+      ),
+      bottomNavigationBar: CurvedNavigationBar(
+        color: Color(0xFF2C2D95),
+        //color: Color(0xFF2C2D95),
+        // backgroundColor: Colors.blue[100],
+        backgroundColor: Color(0xFF7E9BE0),
+        buttonBackgroundColor: Color(0xFF3538B5),
+        height: 54,
+        items: <Widget>[
+          Icon(
+            Icons.ondemand_video,
+            size: 40,
+            color: Colors.white,
+            semanticLabel: "YouTube Video Tutorials",
+          ),
+          Icon(
+            Icons.code,
+            size: 40,
+            color: Colors.white,
+            semanticLabel: "Examples",
+          ),
+          Icon(
+            Icons.apps,
+            size: 40,
+            color: Colors.white,
+            semanticLabel: "Notes and Tutorials",
+          ),
+          Icon(
+            Icons.assignment,
+            size: 40,
+            color: Colors.white,
+            semanticLabel: "Questions and Answers",
+          ),
+          Icon(
+            Icons.book,
+            size: 40,
+            color: Colors.white,
+            semanticLabel: "Resources",
+          ),
+        ],
+        onTap: (int tappedIndex) {
+          setState(
+            () {
+              _showPage = _pageChooser(tappedIndex);
+            },
+          );
+        },
+        index: 2,
+        animationDuration: Duration(
+          milliseconds: 500,
+        ),
+        animationCurve: Curves.easeInToLinear, //bounceInOut elasticInOut
+      ),
     );
+  }
+}
+
+_mailto() async {
+  const url = 'mailto:workingwithsmile@gmail.com?subject=App Feedback';
+  if (await canLaunch(url)) {
+    await launch(
+      url,
+      forceWebView: false,
+    );
+  } else {
+    throw 'Could not launch $url';
   }
 }
