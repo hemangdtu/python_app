@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:python_app/meta/data.dart';
 import 'package:python_app/meta/hyperlinks.dart';
-import 'package:python_app/models/wavy_image_header.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class ListBodyLayout extends StatelessWidget {
   @override
