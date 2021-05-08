@@ -1,4 +1,4 @@
-# python_app
+# Python App
 
 A new Flutter project.
 
