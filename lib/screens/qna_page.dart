@@ -47,7 +47,7 @@ class _ContentPageState extends State<ContentPage> {
                       color: Color(0xFF3538B5),
                     ),
                     child: Image.asset(
-                      "lib/assets/python_logo.png",
+                      "assets/python_logo.png",
                       scale: 10,
                     ),
                   ),
@@ -117,7 +117,7 @@ class _ContentPageState extends State<ContentPage> {
                 ),
                 child: ClipRRect(
                     borderRadius: BorderRadius.circular(40),
-                    child: Image.asset("lib/assets/PyLogo.jpeg")),
+                    child: Image.asset("assets/PyLogo.jpeg")),
               ),
               Padding(
                 padding: const EdgeInsets.only(

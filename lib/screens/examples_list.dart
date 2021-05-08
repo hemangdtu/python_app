@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:python_app/pages/youtube_list.dart';
+import 'package:python_app/screens/youtube_list.dart';
 import 'package:python_app/content/wavy_image_header.dart';
 
 class ExamplesNew extends StatelessWidget {
@@ -44,7 +44,7 @@ Widget _myListView(BuildContext context) {
           //     color: Color(0xFF3538B5),
           //     child: ListTile(
           //       leading: Image.asset(
-          //         "lib/assets/coding_logo.png",
+          //         "assets/coding_logo.png",
           //         scale: 11.7,
           //       ),
           //       title: Center(
@@ -62,7 +62,7 @@ Widget _myListView(BuildContext context) {
           //   ),
           // ),
           WavyHeaderImage(
-            'lib/assets/coding_wallpaper.jpg',
+            'assets/coding_wallpaper.jpg',
             imgScale: 5,
           ),
           VideoListElement(

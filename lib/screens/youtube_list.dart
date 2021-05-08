@@ -34,7 +34,7 @@ Widget _myListView(BuildContext context) {
           //   child: Container(
           //     color: Color(0xFF3538B5),
           //     child: ListTile(
-          //       leading: Image.asset("lib/assets/yt_logo.png"),
+          //       leading: Image.asset("assets/yt_logo.png"),
           //       title: Center(
           //         child: Text(
           //           "Youtube Videos",
@@ -50,7 +50,7 @@ Widget _myListView(BuildContext context) {
           //   ),
           // ),
           WavyHeaderImage(
-            'lib/assets/yt_wallpaper.jpg',
+            'assets/yt_wallpaper.jpg',
             imgScale: 5,
           ),
           VideoListElement(

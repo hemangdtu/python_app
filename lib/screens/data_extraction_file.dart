@@ -1,5 +1,5 @@
 List<String> images = [
-  "lib/assets/PyLogo.jpeg",
+  "assets/PyLogo.jpeg",
 ];
 
 List<String> titleBasics = [
@@ -12,5 +12,8 @@ List<String> titleBasics = [
 ];
 
 List<String> titleTut2 = [
-  "A","b","C","d",
+  "A",
+  "b",
+  "C",
+  "d",
 ];

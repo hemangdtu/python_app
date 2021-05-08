@@ -50,20 +50,20 @@ flutter:
   uses-material-design: true
 
   assets:
-   - lib/assets/
+   - assets/
 
   fonts:
     - family: SF-Pro-Text-Regular
       fonts:
-        - asset: lib/assets/SF-Pro-Text-Regular.otf
+        - asset: assets/SF-Pro-Text-Regular.otf
 
     - family: SF-Pro-Text-Bold
       fonts:
-        - asset: lib/assets/SF-Pro-Text-Bold.otf
+        - asset: assets/SF-Pro-Text-Bold.otf
 
     - family: Calibre-Semibold
       fonts:
-        - asset: lib/assets/Calibre Semibold.otf
+        - asset: assets/Calibre Semibold.otf
 
   # To add assets to your application, add an assets section, like this:
   # assets:
