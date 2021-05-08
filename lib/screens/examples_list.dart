@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:python_app/screens/youtube_list.dart';
-import 'package:python_app/content/wavy_image_header.dart';
+import 'package:python_app/models/wavy_image_header.dart';
 
 class ExamplesNew extends StatelessWidget {
   @override

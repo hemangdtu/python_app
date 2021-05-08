@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import 'package:python_app/screens/qna_page.dart';
 //import 'package:python_app/screens/search.dart';
@@ -9,6 +8,7 @@ import 'package:python_app/screens/youtube_list.dart';
 import 'package:python_app/screens/examples_list.dart';
 import 'package:python_app/screens/resources.dart';
 import 'package:python_app/screens/home_screen.dart';
+import 'package:python_app/meta/hyperlinks.dart';
 
 class LandingPage extends StatefulWidget {
   @override
@@ -71,7 +71,7 @@ class _LandingPageState extends State<LandingPage> {
             ListTile(
               leading: Icon(Icons.photo_library),
               title: Text("Send Us Feedback"),
-              onTap: _mailto,
+              onTap: ContactUs.workingWithSmileMail,
             ),
             ListTile(
               leading: Icon(Icons.library_add),
@@ -93,15 +93,12 @@ class _LandingPageState extends State<LandingPage> {
         ),
       ),
       body: Container(
-        //color: Colors.white,
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         child: _showPage,
       ),
       bottomNavigationBar: CurvedNavigationBar(
         color: Color(0xFF2C2D95),
-        //color: Color(0xFF2C2D95),
-        // backgroundColor: Colors.blue[100],
         backgroundColor: Color(0xFF7E9BE0),
         buttonBackgroundColor: Color(0xFF3538B5),
         height: 54,
@@ -148,20 +145,8 @@ class _LandingPageState extends State<LandingPage> {
         animationDuration: Duration(
           milliseconds: 500,
         ),
-        animationCurve: Curves.easeInToLinear, //bounceInOut elasticInOut
+        animationCurve: Curves.easeInToLinear,
       ),
     );
-  }
-}
-
-_mailto() async {
-  const url = 'mailto:workingwithsmile@gmail.com?subject=App Feedback';
-  if (await canLaunch(url)) {
-    await launch(
-      url,
-      forceWebView: false,
-    );
-  } else {
-    throw 'Could not launch $url';
   }
 }
