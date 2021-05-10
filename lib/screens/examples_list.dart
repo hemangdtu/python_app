@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:python_app/meta/data.dart';
+import 'package:python_app/meta/hyperlinks.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:python_app/models/wavy_image_header.dart';
 
@@ -10,6 +12,15 @@ class ExamplesPage extends StatelessWidget {
 }
 
 Widget _myListView(BuildContext context) {
+  List<Widget> exampleList = [];
+  for (int i = 0; i < exampleTileStrings.length; i++) {
+    exampleList.add(
+      ExampleListElement(
+        title: exampleTileStrings[i],
+        link: ExamplesLinks.linkMap[exampleTileStrings[i]],
+      ),
+    );
+  }
   return Container(
     decoration: BoxDecoration(
       gradient: LinearGradient(
@@ -22,68 +33,8 @@ Widget _myListView(BuildContext context) {
         tileMode: TileMode.clamp,
       ),
     ),
-    child: Padding(
-      padding: EdgeInsets.all(6.0),
-      child: ListView(
-        children: <Widget>[
-          ExampleListElement(
-            title: 'Hello, World!',
-            link: _launchURL1,
-          ),
-          ExampleListElement(
-            title: 'Add Two Numbers',
-            link: _launchURL2,
-          ),
-          ExampleListElement(
-            title: 'Square Root',
-            link: _launchURL3,
-          ),
-          ExampleListElement(
-            title: 'Area of Triangle',
-            link: _launchURL4,
-          ),
-          ExampleListElement(
-            title: 'Swap Two Variables',
-            link: _launchURL5,
-          ),
-          ExampleListElement(
-            title: 'Find Roots of Quadratic Equations',
-            link: _launchURL6,
-          ),
-          ExampleListElement(
-            title: 'Find Roots of Quadratic Equations',
-            link: _launchURL6,
-          ),
-          ExampleListElement(
-            title: 'Find Roots of Quadratic Equations',
-            link: _launchURL6,
-          ),
-          ExampleListElement(
-            title: 'Find Roots of Quadratic Equations',
-            link: _launchURL6,
-          ),
-          ExampleListElement(
-            title: 'Find Roots of Quadratic Equations',
-            link: _launchURL6,
-          ),
-          ExampleListElement(
-            title: 'Find Roots of Quadratic Equations',
-            link: _launchURL6,
-          ),
-          ExampleListElement(
-            title: 'Find Roots of Quadratic Equations',
-            link: _launchURL6,
-          ),
-          ExampleListElement(
-            title: 'Find Roots of Quadratic Equations',
-            link: _launchURL6,
-          ),
-          ExampleListElement(
-            title: 'Find Roots of Quadratic Equations',
-            link: _launchURL6,
-          ),
-        ],
-      ),
+    child: ListView(
+      children: exampleList,
     ),
   );
 }
@@ -103,7 +54,7 @@ class ExampleListElement extends StatelessWidget {
           fontWeight: FontWeight.bold,
         ),
       ),
-      trailing: Icon(Icons.play_circle_filled),
+      trailing: Icon(Icons.book),
       onTap: link,
     );
   }

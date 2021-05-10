@@ -31,11 +31,8 @@ Widget youtubeList(BuildContext context) {
         tileMode: TileMode.clamp,
       ),
     ),
-    child: Padding(
-      padding: EdgeInsets.all(6.0),
-      child: ListView(
-        children: videoList,
-      ),
+    child: ListView(
+      children: videoList,
     ),
   );
 }
