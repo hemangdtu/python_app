@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:python_app/meta/data.dart';
 import 'package:python_app/meta/hyperlinks.dart';
+import 'package:python_app/models/widgetDirectory.dart';
 
 class YouTubePage extends StatelessWidget {
   @override
@@ -35,25 +36,4 @@ Widget youtubeList(BuildContext context) {
       children: videoList,
     ),
   );
-}
-
-class VideoListElement extends StatelessWidget {
-  VideoListElement({this.title, this.link});
-
-  final String title;
-  final Function link;
-
-  @override
-  Widget build(BuildContext context) {
-    return ListTile(
-      title: Text(
-        title,
-        style: TextStyle(
-          fontWeight: FontWeight.bold,
-        ),
-      ),
-      trailing: Icon(Icons.play_circle_filled),
-      onTap: link,
-    );
-  }
 }

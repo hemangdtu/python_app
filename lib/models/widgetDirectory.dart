@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// Home screen Horizontal Bar
 class HorizontalList extends StatelessWidget {
   // ignore: non_constant_identifier_names
   final List<Widget> list_data;
@@ -18,6 +19,7 @@ class HorizontalList extends StatelessWidget {
   }
 }
 
+// Home Screen List Tile
 class ListElement extends StatelessWidget {
   // ignore: non_constant_identifier_names
   final String image_location;
@@ -58,6 +60,50 @@ class ListElement extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+// Example List Tile
+class ExampleListElement extends StatelessWidget {
+  ExampleListElement({this.title, this.link});
+
+  final String title;
+  final Function link;
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      title: Text(
+        title,
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+      trailing: Icon(Icons.book),
+      onTap: link,
+    );
+  }
+}
+
+// Video List Tile
+class VideoListElement extends StatelessWidget {
+  VideoListElement({this.title, this.link});
+
+  final String title;
+  final Function link;
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      title: Text(
+        title,
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+      trailing: Icon(Icons.play_circle_filled),
+      onTap: link,
     );
   }
 }
