@@ -1,6 +1,6 @@
-import 'package:flappy_search_bar/flappy_search_bar.dart';
-import 'package:flappy_search_bar/scaled_tile.dart';
-import 'package:flappy_search_bar/search_bar_style.dart';
+import 'package:flappy_search_bar_fork/flappy_search_bar.dart';
+import 'package:flappy_search_bar_fork/scaled_tile.dart';
+import 'package:flappy_search_bar_fork/search_bar_style.dart';
 import 'package:flutter/material.dart';
 
 class Post {
@@ -53,7 +53,7 @@ class Search extends StatelessWidget {
               child: Text("No Result Found!"),
             ),
             debounceDuration: Duration(milliseconds: 300),
-            cancellationText: Text("Cancel"),
+            cancellationWidget: Text("Cancel"),
             icon: Icon(Icons.search),
             crossAxisCount: 2,
             indexedScaledTileBuilder: (int index) =>

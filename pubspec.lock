@@ -64,13 +64,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.2.0"
-  flappy_search_bar:
+  flappy_search_bar_fork:
     dependency: "direct main"
     description:
-      name: flappy_search_bar
+      name: flappy_search_bar_fork
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.4.1"
+    version: "1.7.4"
   flutter:
     dependency: "direct main"
     description: flutter
