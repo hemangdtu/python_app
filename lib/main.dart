@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:python_app/screens/landingPage.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(PythonApp());
 
-class MyApp extends StatelessWidget {
+class PythonApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
