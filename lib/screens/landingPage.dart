@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
-import 'package:python_app/screens/qna_page.dart';
+import 'package:python_app/models/qna_page.dart';
 //import 'package:python_app/screens/search.dart';
 import 'package:python_app/screens/youtube_list.dart';
 import 'package:python_app/screens/examples_list.dart';
 import 'package:python_app/screens/resources.dart';
-import 'package:python_app/screens/home_screen.dart';
+import 'package:python_app/screens/homeScreen.dart';
 import 'package:python_app/meta/hyperlinks.dart';
 
 class LandingPage extends StatefulWidget {
