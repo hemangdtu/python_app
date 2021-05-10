@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:python_app/meta/data.dart';
 import 'package:python_app/meta/hyperlinks.dart';
 
-class ListBodyLayout extends StatelessWidget {
+class YouTubePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return _myListView(context);
+    return youtubeList(context);
   }
 }
 
-Widget _myListView(BuildContext context) {
+Widget youtubeList(BuildContext context) {
   List<Widget> videoList = [];
   for (int i = 0; i < videoTileStrings.length; i++) {
     videoList.add(
@@ -32,7 +32,7 @@ Widget _myListView(BuildContext context) {
       ),
     ),
     child: Padding(
-      padding: const EdgeInsets.all(6.0),
+      padding: EdgeInsets.all(6.0),
       child: ListView(
         children: videoList,
       ),

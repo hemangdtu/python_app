@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:python_app/screens/youtube_list.dart';
 import 'package:python_app/models/wavy_image_header.dart';
 
-class ExamplesNew extends StatelessWidget {
+class ExamplesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return _myListView(context);
@@ -24,100 +23,62 @@ Widget _myListView(BuildContext context) {
       ),
     ),
     child: Padding(
-      padding: const EdgeInsets.all(6.0),
+      padding: EdgeInsets.all(6.0),
       child: ListView(
         children: <Widget>[
-          // ClipRRect(
-          //   borderRadius: BorderRadius.circular(50),
-          //   child: Container(
-          //     // decoration: BoxDecoration(
-          //     //   gradient: LinearGradient(
-          //     //     colors: [
-          //     //       Colors.red[900],
-          //     //       Colors.red[600],
-          //     //       Colors.red,
-          //     //       Colors.red[600],
-          //     //       Colors.red[900],
-          //     //     ],
-          //     //   ),
-          //     // ),
-          //     color: Color(0xFF3538B5),
-          //     child: ListTile(
-          //       leading: Image.asset(
-          //         "assets/coding_logo.png",
-          //         scale: 11.7,
-          //       ),
-          //       title: Center(
-          //         child: Text(
-          //           "Coding Examples",
-          //           style: TextStyle(
-          //             fontFamily: "SF-Pro-Text-Regular",
-          //             //fontWeight: FontWeight.bold,
-          //             fontSize: 30,
-          //             color: Colors.white,
-          //           ),
-          //         ),
-          //       ),
-          //     ),
-          //   ),
-          // ),
-          WavyHeaderImage(
-            'assets/coding_wallpaper.jpg',
-            imgScale: 5,
-          ),
-          VideoListElement(
+          ExampleListElement(
             title: 'Hello, World!',
             link: _launchURL1,
           ),
-          VideoListElement(
+          ExampleListElement(
             title: 'Add Two Numbers',
             link: _launchURL2,
           ),
-          VideoListElement(
+          ExampleListElement(
             title: 'Square Root',
             link: _launchURL3,
           ),
-          VideoListElement(
+          ExampleListElement(
             title: 'Area of Triangle',
             link: _launchURL4,
           ),
-          VideoListElement(
+          ExampleListElement(
             title: 'Swap Two Variables',
             link: _launchURL5,
           ),
-          VideoListElement(
+          ExampleListElement(
             title: 'Find Roots of Quadratic Equations',
             link: _launchURL6,
           ),
-          VideoListElement(
+          ExampleListElement(
             title: 'Find Roots of Quadratic Equations',
             link: _launchURL6,
           ),
-          VideoListElement(
+          ExampleListElement(
             title: 'Find Roots of Quadratic Equations',
             link: _launchURL6,
           ),
-          VideoListElement(
+          ExampleListElement(
             title: 'Find Roots of Quadratic Equations',
             link: _launchURL6,
           ),
-          VideoListElement(
+          ExampleListElement(
             title: 'Find Roots of Quadratic Equations',
             link: _launchURL6,
           ),
-          VideoListElement(
+          ExampleListElement(
             title: 'Find Roots of Quadratic Equations',
             link: _launchURL6,
           ),
-          VideoListElement(
+          ExampleListElement(
             title: 'Find Roots of Quadratic Equations',
             link: _launchURL6,
           ),
-          VideoListElement(
+          ExampleListElement(
             title: 'Find Roots of Quadratic Equations',
             link: _launchURL6,
           ),
-          VideoListElement(
+          ExampleListElement(
             title: 'Find Roots of Quadratic Equations',
             link: _launchURL6,
           ),
@@ -125,6 +86,27 @@ Widget _myListView(BuildContext context) {
       ),
     ),
   );
+}
+
+class ExampleListElement extends StatelessWidget {
+  ExampleListElement({this.title, this.link});
+
+  final String title;
+  final Function link;
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      title: Text(
+        title,
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+      trailing: Icon(Icons.play_circle_filled),
+      onTap: link,
+    );
+  }
 }
 
 _launchURL1() async {

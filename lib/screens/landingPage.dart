@@ -21,8 +21,8 @@ class _LandingPageState extends State<LandingPage> {
   int selectedIndex = 2;
 
   final ContentPage _searchbarcode = ContentPage();
-  final ListBodyLayout _list = ListBodyLayout();
-  final ExamplesNew _newexamples = ExamplesNew();
+  final YouTubePage _list = YouTubePage();
+  final ExamplesPage _newexamples = ExamplesPage();
   final ResourceList _resourceList = ResourceList();
   final HomeScreen _newHome = HomeScreen();
 
