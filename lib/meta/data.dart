@@ -1,3 +1,6 @@
+import 'package:flutter/material.dart';
+import 'package:python_app/meta/hyperlinks.dart';
+
 List<String> videoTileStrings = [
   "Overview of Python Programming",
   "Datatypes in Python Programming",
@@ -90,4 +93,58 @@ Map<String, List<String>> tutorialTile = {
   "Exception Handling": [
     "Exception Handling",
   ],
+};
+
+Map<String, String> tutorialTileImage = {
+  "Introduction and Setup": "assets/PyLogo.jpeg",
+  "Python Basics": "assets/PyLogo.jpeg",
+  "Conditional Statements": "assets/PyLogo.jpeg",
+  "Iterative Statements": "assets/PyLogo.jpeg",
+  "Working with Datatypes": "assets/PyLogo.jpeg",
+  "Functions": "assets/PyLogo.jpeg",
+  "Modules and Packages": "assets/PyLogo.jpeg",
+  "Object Oriented Programming": "assets/PyLogo.jpeg",
+  "Exception Handling": "assets/PyLogo.jpeg",
+};
+
+List<String> resourceCaption = [
+  "Book 1",
+  "Book 2",
+  "Book 3",
+  "Book 4",
+  "Book 5",
+  "Book 6",
+];
+
+var resourceTileInfo = {
+  "Book 1": {
+    "icon": Icons.local_library,
+    "color": Colors.cyan,
+    "function": ResourceLinks.resource1,
+  },
+  "Book 2": {
+    "icon": Icons.local_library,
+    "color": Colors.cyan,
+    "function": ResourceLinks.resource2,
+  },
+  "Book 3": {
+    "icon": Icons.local_library,
+    "color": Colors.cyan,
+    "function": ResourceLinks.resource3,
+  },
+  "Book 4": {
+    "icon": Icons.local_library,
+    "color": Colors.cyan,
+    "function": ResourceLinks.resource4,
+  },
+  "Book 5": {
+    "icon": Icons.local_library,
+    "color": Colors.cyan,
+    "function": ResourceLinks.resource5,
+  },
+  "Book 6": {
+    "icon": Icons.local_library,
+    "color": Colors.cyan,
+    "function": ResourceLinks.resource6,
+  },
 };

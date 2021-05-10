@@ -1,90 +1,42 @@
 import 'package:flutter/material.dart';
+import 'package:python_app/meta/data.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ResourceList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return _resourcesList(context);
+    List<Widget> resourceTile = [];
+    for (int i = 0; i < resourceCaption.length; i++) {
+      resourceTile.add(ResourceTile(
+        title: resourceCaption[i],
+        icon: resourceTileInfo[resourceCaption[i]]["icon"],
+        warna: resourceTileInfo[resourceCaption[i]]["color"],
+        link: resourceTileInfo[resourceCaption[i]]["function"],
+      ));
+    }
+    return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [
+            Color(0xFF7E9BE0),
+            Color(0xFF2E8BC0),
+          ],
+          begin: Alignment.bottomCenter,
+          end: Alignment.topCenter,
+          tileMode: TileMode.clamp,
+        ),
+      ),
+      padding: EdgeInsets.symmetric(horizontal: 20.0),
+      child: GridView.count(
+        crossAxisCount: 2,
+        children: resourceTile,
+      ),
+    );
   }
 }
 
-Widget _resourcesList(BuildContext context) {
-  return Container(
-    decoration: BoxDecoration(
-      gradient: LinearGradient(
-        colors: [
-          // Colors.blue[100],
-          // Colors.blue[300],
-          Color(0xFF7E9BE0),
-          //Color(0xFF1b1e44),
-          Color(0xFF2E8BC0),
-          // Color(0xFF1b1e44),
-          // Color(0xFF2E8BC0),
-        ],
-        begin: Alignment.bottomCenter,
-        end: Alignment.topCenter,
-        tileMode: TileMode.clamp,
-      ),
-    ),
-    padding: EdgeInsets.only(top: 15.0, left: 30.0, right: 30.0),
-    child: GridView.count(
-      crossAxisCount: 2,
-      children: <Widget>[
-        MyMenu(
-          title: "Book 1",
-          icon: Icons.local_library,
-          warna: Colors.cyan,
-          link: _launchURLB1,
-        ),
-        MyMenu(
-          title: "Book 2",
-          icon: Icons.local_library,
-          warna: Colors.cyan,
-          link: _launchURLB2,
-        ),
-        MyMenu(
-          title: "Book 3",
-          icon: Icons.local_library,
-          warna: Colors.cyan,
-          link: _launchURLB3,
-        ),
-        MyMenu(
-          title: "Book 4",
-          icon: Icons.local_library,
-          warna: Colors.cyan,
-          link: _launchURLB4,
-        ),
-        MyMenu(
-          title: "Book 5",
-          icon: Icons.local_library,
-          warna: Colors.cyan,
-          link: _launchURLB5,
-        ),
-        MyMenu(
-          title: "Book 6",
-          icon: Icons.bookmark_border,
-          warna: Colors.cyan,
-          link: _launchURLB6,
-        ),
-        MyMenu(
-          title: "Book 6",
-          icon: Icons.bookmark_border,
-          warna: Colors.cyan,
-          link: _launchURLB6,
-        ),
-        MyMenu(
-          title: "Book 6",
-          icon: Icons.bookmark_border,
-          warna: Colors.cyan,
-          link: _launchURLB6,
-        ),
-      ],
-    ),
-  );
-}
-
-class MyMenu extends StatelessWidget {
-  MyMenu({this.title, this.icon, this.warna, this.link});
+class ResourceTile extends StatelessWidget {
+  ResourceTile({this.title, this.icon, this.warna, this.link});
 
   final String title;
   final IconData icon;

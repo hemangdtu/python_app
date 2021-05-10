@@ -197,3 +197,77 @@ class ExamplesLinks {
     }
   }
 }
+
+class ResourceLinks {
+  static resource1() async {
+    const url = 'https://www.youtube.com/watch?v=0t0AS1abKkw';
+    if (await canLaunch(url)) {
+      await launch(
+        url,
+        forceWebView: false,
+      );
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
+  static resource2() async {
+    const url = 'https://www.youtube.com/watch?v=T2G9LnAM43Q';
+    if (await canLaunch(url)) {
+      await launch(
+        url,
+        forceWebView: false,
+      );
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
+  static resource3() async {
+    const url = 'https://www.youtube.com/watch?v=0t0AS1abKkw';
+    if (await canLaunch(url)) {
+      await launch(
+        url,
+        forceWebView: false,
+      );
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
+  static resource4() async {
+    const url = 'https://www.youtube.com/watch?v=0t0AS1abKkw';
+    if (await canLaunch(url)) {
+      await launch(
+        url,
+        forceWebView: false,
+      );
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
+  static resource5() async {
+    const url = 'https://www.youtube.com/watch?v=0t0AS1abKkw';
+    if (await canLaunch(url)) {
+      await launch(
+        url,
+        forceWebView: false,
+      );
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
+  static resource6() async {
+    const url = 'https://www.youtube.com/watch?v=0t0AS1abKkw';
+    if (await canLaunch(url)) {
+      await launch(
+        url,
+        forceWebView: false,
+      );
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+}

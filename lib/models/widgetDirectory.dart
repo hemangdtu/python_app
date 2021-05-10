@@ -40,7 +40,7 @@ class ListElement extends StatelessWidget {
             title: ClipRRect(
               borderRadius: BorderRadius.circular(20.0),
               child: Image.asset(
-                "assets/PyLogo.jpeg",
+                image_location,
                 scale: 1,
               ),
             ),

@@ -23,7 +23,7 @@ class HomeScreen extends StatelessWidget {
       tutorialList = [];
       for (int j = 0; j < tutorialTile[sectionNames[i]].length; j++) {
         tutorialList.add(ListElement(
-          image_location: "a",
+          image_location: tutorialTileImage[sectionNames[i]],
           image_caption: tutorialTile[sectionNames[i]][j],
         ));
       }
