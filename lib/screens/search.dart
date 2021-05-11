@@ -1,3 +1,4 @@
+/*
 import 'package:flappy_search_bar_fork/flappy_search_bar.dart';
 import 'package:flappy_search_bar_fork/scaled_tile.dart';
 import 'package:flappy_search_bar_fork/search_bar_style.dart';
@@ -90,3 +91,4 @@ class Search extends StatelessWidget {
     );
   }
 }
+*/

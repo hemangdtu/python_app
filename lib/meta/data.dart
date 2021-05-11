@@ -10,6 +10,17 @@ List<String> videoTileStrings = [
   "Operators in Python Programming",
 ];
 
+List<String> exampleCategories = [
+  "Basic Programs",
+  "Conditions and Loops",
+  "Arrays",
+  "Pattern Printing",
+  "Lists",
+  "Strings",
+  "Sorting Algorithms",
+  "Searching Algorithms",
+];
+
 List<String> exampleTileStrings = [
   "Hello, World!",
   "Add Two Numbers",
