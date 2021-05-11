@@ -32,11 +32,22 @@ class ExamplesPage extends StatelessWidget {
           child: Container(
             color: Colors.white,
             child: Center(
-              child: Text(
-                exampleCategories[index],
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image(
+                    image: AssetImage(
+                        exampleCategoriesInfo[exampleCategories[index]]
+                            ["image"]),
+                    width: MediaQuery.of(context).size.width * 0.3,
+                  ),
+                  Text(
+                    exampleCategories[index],
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  )
+                ],
               ),
             ),
           ),
@@ -44,13 +55,14 @@ class ExamplesPage extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context) {
-                return ExampleContentPage();
+                return ExampleListPage(
+                    index); // exampleCategoriesInfo[exampleCategories[index]]["link"];
               }),
             );
           },
         ),
         staggeredTileBuilder: (int index) =>
-            StaggeredTile.count(2, index.isEven ? 3 : 2),
+            StaggeredTile.count(2, index.isEven ? 2.4 : 2),
         mainAxisSpacing: 4.0,
         crossAxisSpacing: 4.0,
       ),
@@ -59,30 +71,34 @@ class ExamplesPage extends StatelessWidget {
   }
 }
 
-Widget _myListView(BuildContext context) {
-  List<Widget> exampleList = [];
-  for (int i = 0; i < exampleTileStrings.length; i++) {
-    exampleList.add(
-      ExampleListElement(
-        title: exampleTileStrings[i],
-        link: ExamplesLinks.linkMap[exampleTileStrings[i]],
+class ExampleListPage extends StatelessWidget {
+  int index;
+  ExampleListPage(this.index);
+  @override
+  Widget build(BuildContext context) {
+    return DefaultTabController(
+      length: 2,
+      child: SafeArea(
+        child: Scaffold(
+          appBar: AppBar(
+            leading: IconButton(
+              icon: Icon(
+                Icons.arrow_back,
+              ),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
+            backgroundColor: Color(0xFF2C2D95),
+            title: Text("Working With Smile: Python"),
+            centerTitle: true,
+            iconTheme: IconThemeData(
+              color: Colors.white,
+            ),
+          ),
+          body: exampleProgramList(context, index),
+        ),
       ),
     );
   }
-  return Container(
-    decoration: BoxDecoration(
-      gradient: LinearGradient(
-        colors: [
-          Color(0xFF7E9BE0),
-          Color(0xFF2E8BC0),
-        ],
-        begin: Alignment.bottomCenter,
-        end: Alignment.topCenter,
-        tileMode: TileMode.clamp,
-      ),
-    ),
-    child: ListView(
-      children: exampleList,
-    ),
-  );
 }

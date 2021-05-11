@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:python_app/meta/hyperlinks.dart';
+import 'package:python_app/screens/exampleContentPage.dart';
 
 List<String> videoTileStrings = [
   "Overview of Python Programming",
@@ -20,6 +21,41 @@ List<String> exampleCategories = [
   "Sorting Algorithms",
   "Searching Algorithms",
 ];
+
+var exampleCategoriesInfo = {
+  "Basic Programs": {
+    "image": "assets/python_logo.png",
+    "link": "A",
+  },
+  "Conditions and Loops": {
+    "image": "assets/python_logo.png",
+    "link": "A",
+  },
+  "Arrays": {
+    "image": "assets/python_logo.png",
+    "link": "A",
+  },
+  "Pattern Printing": {
+    "image": "assets/python_logo.png",
+    "link": "A",
+  },
+  "Lists": {
+    "image": "assets/python_logo.png",
+    "link": "A",
+  },
+  "Strings": {
+    "image": "assets/python_logo.png",
+    "link": "A",
+  },
+  "Sorting Algorithms": {
+    "image": "assets/python_logo.png",
+    "link": "A",
+  },
+  "Searching Algorithms": {
+    "image": "assets/python_logo.png",
+    "link": "A",
+  },
+};
 
 List<String> exampleTileStrings = [
   "Hello, World!",

@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:python_app/meta/data.dart';
+import 'package:python_app/meta/hyperlinks.dart';
+import 'package:python_app/screens/exampleContentPage.dart';
 
 // Home screen Horizontal Bar
 class HorizontalList extends StatelessWidget {
@@ -64,12 +67,40 @@ class ListElement extends StatelessWidget {
   }
 }
 
+Widget exampleProgramList(BuildContext context, int index) {
+  List<Widget> exampleList = [];
+  for (int i = 0; i < exampleTileStrings.length; i++) {
+    exampleList.add(
+      ExampleListElement(
+        title: exampleTileStrings[i],
+        link: exampleCategoriesInfo[exampleCategories[index]]["link"],
+      ),
+    );
+  }
+  return Container(
+    decoration: BoxDecoration(
+      gradient: LinearGradient(
+        colors: [
+          Color(0xFF7E9BE0),
+          Color(0xFF2E8BC0),
+        ],
+        begin: Alignment.bottomCenter,
+        end: Alignment.topCenter,
+        tileMode: TileMode.clamp,
+      ),
+    ),
+    child: ListView(
+      children: exampleList,
+    ),
+  );
+}
+
 // Example List Tile
 class ExampleListElement extends StatelessWidget {
   ExampleListElement({this.title, this.link});
 
   final String title;
-  final Function link;
+  final String link;
 
   @override
   Widget build(BuildContext context) {
@@ -81,7 +112,11 @@ class ExampleListElement extends StatelessWidget {
         ),
       ),
       trailing: Icon(Icons.book),
-      onTap: link,
+      onTap: () {
+        Navigator.push(context, MaterialPageRoute(builder: (context) {
+          return ExampleContentPage();
+        }));
+      },
     );
   }
 }
