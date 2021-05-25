@@ -3,6 +3,8 @@ import 'package:python_app/meta/data.dart';
 import 'package:python_app/meta/hyperlinks.dart';
 import 'package:python_app/models/widgetDirectory.dart';
 
+// TODO : Updated YouTube Channel Linking and edit class accordingly.
+
 class YouTubePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
