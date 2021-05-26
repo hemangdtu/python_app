@@ -26,19 +26,15 @@ class ExampleContentPage extends StatelessWidget {
             ),
             bottom: TabBar(
               tabs: [
-                Tab(icon: Icon(Icons.directions_car)),
-                Tab(icon: Icon(Icons.directions_transit)),
+                Tab(icon: Icon(Icons.code)),
+                Tab(icon: Icon(Icons.menu_book_sharp)),
               ],
             ),
           ),
           body: TabBarView(
             children: [
-              // Markdown(
-              //   selectable: true,
-              //   data: sumOfNumbersMarkdown,
-              // ),
+              markdownContent("print(\"Hello, World!\")"),
               markdownContent(sumOfNumbersMarkdown),
-              Text("Tab 2"),
             ],
           ),
         ),

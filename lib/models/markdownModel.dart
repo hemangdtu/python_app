@@ -10,6 +10,10 @@ Widget markdownContent(String data) {
       ),
       h3: TextStyle(
         fontSize: 20,
+        fontWeight: FontWeight.bold,
+      ),
+      listBullet: TextStyle(
+        fontSize: 20,
       ),
       p: TextStyle(
         fontSize: 20,
