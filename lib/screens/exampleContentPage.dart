@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:python_app/meta/exampleCode.dart';
+import 'package:python_app/models/markdownModel.dart';
 
 class ExampleContentPage extends StatelessWidget {
   @override
@@ -33,10 +33,11 @@ class ExampleContentPage extends StatelessWidget {
           ),
           body: TabBarView(
             children: [
-              Markdown(
-                selectable: true,
-                data: sumOfNumbersMarkdown,
-              ),
+              // Markdown(
+              //   selectable: true,
+              //   data: sumOfNumbersMarkdown,
+              // ),
+              markdownContent(sumOfNumbersMarkdown),
               Text("Tab 2"),
             ],
           ),
