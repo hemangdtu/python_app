@@ -29,19 +29,12 @@ class APIService {
       HttpHeaders.contentTypeHeader: 'application/json',
     };
 
-    // Get Channel
+    // Getting Channel Info
     var response = await http.get(uri, headers: headers);
     if (response.statusCode == 200) {
       Map<String, dynamic> data = json.decode(response.body)['items'][0];
       Channel channel = Channel.fromMap(data);
 
-      // Fetch first batch of videos from uploads playlist
-      channel.videos = await fetchVideosFromPlaylist(
-        // playlistId: channel.uploadPlaylistId,
-        playlistId: channel.uploadPlaylistId,
-      );
-      for (int i = 0; i < channel.videos.length; i++)
-        print(channel.videos[i].title);
       return channel;
     } else {
       throw json.decode(response.body)['error']['message'];
@@ -63,10 +56,16 @@ class APIService {
       HttpHeaders.contentTypeHeader: 'application/json',
     };
 
+    // Getting Playlist Info
     var response = await http.get(uri, headers: headers);
     if (response.statusCode == 200) {
       Map<String, dynamic> data = json.decode(response.body)['items'][0];
       Playlist playlist = Playlist.fromMap(data);
+
+      // Fetch first batch of videos from given playlist
+      playlist.videos = await fetchVideosFromPlaylist(
+        playlistId: playlist.id,
+      );
 
       return playlist;
     } else {
@@ -99,7 +98,7 @@ class APIService {
       _nextPageToken = data['nextPageToken'] ?? '';
       List<dynamic> videosJson = data['items'];
 
-      // Fetch first eight videos from uploads playlist
+      // Fetch first eight videos from given playlist
       List<Video> videos = [];
       videosJson.forEach(
         (json) => videos.add(

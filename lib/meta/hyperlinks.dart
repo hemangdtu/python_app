@@ -9,6 +9,18 @@ class ContactUs {
       throw 'Could not launch $url';
     }
   }
+
+  static visitYouTube() async {
+    const url = 'https://www.youtube.com/channel/UCwne7qrrSGVbhq07hBelKig';
+    if (await canLaunch(url)) {
+      await launch(
+        url,
+        forceWebView: false,
+      );
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
 }
 
 class VideoLinks {

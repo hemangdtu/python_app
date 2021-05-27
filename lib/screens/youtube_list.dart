@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:python_app/meta/hyperlinks.dart';
 import 'package:python_app/models/channel_model.dart';
 import 'package:python_app/models/playlist_model.dart';
 import 'package:python_app/models/video_model.dart';
@@ -33,60 +34,62 @@ class _YouTubePageState extends State<YouTubePage> {
     setState(() {
       _channel = channel;
       _playlist = playlist;
-      print(_playlist.videoCount);
     });
   }
 
   _buildProfileInfo() {
-    return Container(
-      margin: EdgeInsets.all(20.0),
-      padding: EdgeInsets.all(20.0),
-      height: 100.0,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black12,
-            offset: Offset(0, 1),
-            blurRadius: 6.0,
-          ),
-        ],
-      ),
-      child: Row(
-        children: <Widget>[
-          CircleAvatar(
-            backgroundColor: Colors.white,
-            radius: 35.0,
-            backgroundImage: NetworkImage(_channel.profilePictureUrl),
-          ),
-          SizedBox(width: 12.0),
-          Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text(
-                  _channel.title,
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.w600,
-                  ),
-                  overflow: TextOverflow.ellipsis,
-                ),
-                Text(
-                  '${_channel.subscriberCount} subscribers',
-                  style: TextStyle(
-                    color: Colors.grey[600],
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.w600,
-                  ),
-                  overflow: TextOverflow.ellipsis,
-                ),
-              ],
+    return InkWell(
+      onTap: ContactUs.visitYouTube,
+      child: Container(
+        margin: EdgeInsets.all(20.0),
+        padding: EdgeInsets.all(20.0),
+        height: 100.0,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black54,
+              offset: Offset(0, 2),
+              blurRadius: 6.0,
             ),
-          )
-        ],
+          ],
+        ),
+        child: Row(
+          children: <Widget>[
+            CircleAvatar(
+              backgroundColor: Colors.white,
+              radius: 35.0,
+              backgroundImage: NetworkImage(_channel.profilePictureUrl),
+            ),
+            SizedBox(width: 12.0),
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text(
+                    _channel.title,
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.w600,
+                    ),
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  Text(
+                    '${_channel.subscriberCount} subscribers',
+                    style: TextStyle(
+                      color: Colors.grey[600],
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w600,
+                    ),
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
@@ -138,10 +141,10 @@ class _YouTubePageState extends State<YouTubePage> {
   _loadMoreVideos() async {
     _isLoading = true;
     List<Video> moreVideos = await APIService.instance
-        .fetchVideosFromPlaylist(playlistId: _channel.uploadPlaylistId);
-    List<Video> allVideos = _channel.videos..addAll(moreVideos);
+        .fetchVideosFromPlaylist(playlistId: _playlist.id);
+    List<Video> allVideos = _playlist.videos..addAll(moreVideos);
     setState(() {
-      _channel.videos = allVideos;
+      _playlist.videos = allVideos;
     });
     _isLoading = false;
   }
@@ -163,9 +166,8 @@ class _YouTubePageState extends State<YouTubePage> {
       child: _channel != null
           ? NotificationListener<ScrollNotification>(
               onNotification: (ScrollNotification scrollDetails) {
-                // _playlist.videoCount
                 if (!_isLoading &&
-                    _channel.videos.length != int.parse(_channel.videoCount) &&
+                    _playlist.videos.length != _playlist.videoCount &&
                     scrollDetails.metrics.pixels ==
                         scrollDetails.metrics.maxScrollExtent) {
                   _loadMoreVideos();
@@ -173,12 +175,12 @@ class _YouTubePageState extends State<YouTubePage> {
                 return false;
               },
               child: ListView.builder(
-                itemCount: 1 + _channel.videos.length,
+                itemCount: 1 + _playlist.videos.length,
                 itemBuilder: (BuildContext context, int index) {
                   if (index == 0) {
                     return _buildProfileInfo();
                   }
-                  Video video = _channel.videos[index - 1];
+                  Video video = _playlist.videos[index - 1];
                   return _buildVideo(video);
                 },
               ),
@@ -186,7 +188,7 @@ class _YouTubePageState extends State<YouTubePage> {
           : Center(
               child: CircularProgressIndicator(
                 valueColor: AlwaysStoppedAnimation<Color>(
-                  Theme.of(context).primaryColor, // Red
+                  Colors.white,
                 ),
               ),
             ),
