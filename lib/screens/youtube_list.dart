@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:python_app/models/channel_model.dart';
+import 'package:python_app/models/playlist_model.dart';
 import 'package:python_app/models/video_model.dart';
 import 'package:python_app/screens/video_screen.dart';
 import 'package:python_app/services/youtube_api.dart';
@@ -13,6 +14,7 @@ class YouTubePage extends StatefulWidget {
 
 class _YouTubePageState extends State<YouTubePage> {
   Channel _channel;
+  Playlist _playlist;
 
   bool _isLoading = false;
 
@@ -25,8 +27,13 @@ class _YouTubePageState extends State<YouTubePage> {
   _initChannel() async {
     Channel channel = await APIService.instance
         .fetchChannel(channelId: 'UCwne7qrrSGVbhq07hBelKig');
+
+    Playlist playlist = await APIService.instance
+        .fetchPlaylist(playlistId: 'PLPKHrH2ceHJzt7Md6k5m9mpnuS8F_TP5T');
     setState(() {
       _channel = channel;
+      _playlist = playlist;
+      print(_playlist.videoCount);
     });
   }
 
@@ -156,6 +163,7 @@ class _YouTubePageState extends State<YouTubePage> {
       child: _channel != null
           ? NotificationListener<ScrollNotification>(
               onNotification: (ScrollNotification scrollDetails) {
+                // _playlist.videoCount
                 if (!_isLoading &&
                     _channel.videos.length != int.parse(_channel.videoCount) &&
                     scrollDetails.metrics.pixels ==
