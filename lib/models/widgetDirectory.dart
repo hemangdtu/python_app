@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:python_app/meta/data.dart';
-import 'package:python_app/meta/hyperlinks.dart';
 import 'package:python_app/screens/exampleContentPage.dart';
 
 // Home screen Horizontal Bar

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:python_app/meta/exampleCode.dart';
+import 'package:python_app/meta/programs/sumOfNumbers.dart';
 import 'package:python_app/models/markdownModel.dart';
 
 class ExampleContentPage extends StatelessWidget {
