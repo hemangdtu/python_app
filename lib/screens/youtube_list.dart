@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:python_app/meta/constants.dart';
 import 'package:python_app/meta/hyperlinks.dart';
 import 'package:python_app/models/YouTubeScreen/channel_model.dart';
 import 'package:python_app/models/YouTubeScreen/playlist_model.dart';
@@ -152,17 +153,7 @@ class _YouTubePageState extends State<YouTubePage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            Color(0xFF7E9BE0),
-            Color(0xFF2E8BC0),
-          ],
-          begin: Alignment.bottomCenter,
-          end: Alignment.topCenter,
-          tileMode: TileMode.clamp,
-        ),
-      ),
+      decoration: gradientSet,
       child: _channel != null
           ? NotificationListener<ScrollNotification>(
               onNotification: (ScrollNotification scrollDetails) {

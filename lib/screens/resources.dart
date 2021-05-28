@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:python_app/meta/constants.dart';
 import 'package:python_app/meta/data.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -15,17 +16,7 @@ class ResourceList extends StatelessWidget {
       ));
     }
     return Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            Color(0xFF7E9BE0),
-            Color(0xFF2E8BC0),
-          ],
-          begin: Alignment.bottomCenter,
-          end: Alignment.topCenter,
-          tileMode: TileMode.clamp,
-        ),
-      ),
+      decoration: gradientSet,
       padding: EdgeInsets.symmetric(horizontal: 20.0),
       child: GridView.count(
         crossAxisCount: 2,

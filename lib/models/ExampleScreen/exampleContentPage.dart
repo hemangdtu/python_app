@@ -36,10 +36,6 @@ class ExampleContentPage extends StatelessWidget {
           ),
           body: TabBarView(
             children: exampleContent(domain),
-            // children: [
-            // markdownContent("print(\"Hello, World!\")"),
-            // markdownContent(sumOfNumbersMarkdown),
-            // ],
           ),
         ),
       ),

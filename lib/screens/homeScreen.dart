@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:python_app/meta/constants.dart';
 import 'package:python_app/meta/data.dart';
 import 'package:python_app/models/HomeScreen/horizontalListTiles.dart';
 
@@ -39,17 +40,7 @@ class HomeScreen extends StatelessWidget {
     }
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              Color(0xFF7E9BE0),
-              Color(0xFF2E8BC0),
-            ],
-            begin: Alignment.bottomCenter,
-            end: Alignment.topCenter,
-            tileMode: TileMode.clamp,
-          ),
-        ),
+        decoration: gradientSet,
         child: new ListView(children: sectionLists),
       ),
     );

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:python_app/meta/constants.dart';
 
 import 'package:python_app/models/qna_page.dart';
+import 'package:python_app/screens/aboutUs.dart';
 //import 'package:python_app/screens/search.dart';
 import 'package:python_app/screens/youtube_list.dart';
 import 'package:python_app/screens/examples_list.dart';
@@ -69,24 +71,29 @@ class _LandingPageState extends State<LandingPage> {
         child: ListView(
           children: <Widget>[
             ListTile(
-              leading: Icon(Icons.photo_library),
+              leading: Icon(Icons.mail_outline_sharp),
               title: Text("Send Us Feedback"),
               onTap: ContactUs.workingWithSmileMail,
             ),
             ListTile(
-              leading: Icon(Icons.library_add),
+              leading: Icon(Icons.supervised_user_circle_sharp),
               title: Text("About Us"),
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return AboutUsPage();
+                }));
+              },
             ),
             ListTile(
-              leading: Icon(Icons.library_music),
+              leading: Icon(Icons.star_border_sharp),
               title: Text("Rate Us"),
             ),
             ListTile(
-              leading: Icon(Icons.video_library),
+              leading: Icon(Icons.policy_sharp),
               title: Text("Privacy Policy"),
             ),
             ListTile(
-              leading: Icon(Icons.local_library),
+              leading: Icon(Icons.plagiarism_sharp),
               title: Text("Terms & Conditions"),
             ),
           ],
@@ -98,41 +105,18 @@ class _LandingPageState extends State<LandingPage> {
         child: _showPage,
       ),
       bottomNavigationBar: CurvedNavigationBar(
-        color: Color(0xFF2C2D95),
-        backgroundColor: Color(0xFF7E9BE0),
-        buttonBackgroundColor: Color(0xFF3538B5),
+        color: navBarColor,
+        backgroundColor: navBarBackgroundColor,
+        buttonBackgroundColor: navBarButtonBackgroundColor,
         height: 54,
         items: <Widget>[
-          Icon(
-            Icons.ondemand_video,
-            size: 40,
-            color: Colors.white,
-            semanticLabel: "YouTube Video Tutorials",
-          ),
-          Icon(
-            Icons.code,
-            size: 40,
-            color: Colors.white,
-            semanticLabel: "Examples",
-          ),
-          Icon(
-            Icons.apps,
-            size: 40,
-            color: Colors.white,
-            semanticLabel: "Notes and Tutorials",
-          ),
-          Icon(
-            Icons.assignment,
-            size: 40,
-            color: Colors.white,
-            semanticLabel: "Questions and Answers",
-          ),
-          Icon(
-            Icons.book,
-            size: 40,
-            color: Colors.white,
-            semanticLabel: "Resources",
-          ),
+          for (int i = 0; i < navBarOptions.length; i++)
+            Icon(
+              navBarOptions[i][0],
+              size: 40,
+              color: Colors.white,
+              semanticLabel: navBarOptions[i][1],
+            ),
         ],
         onTap: (int tappedIndex) {
           setState(

@@ -1,6 +1,8 @@
 import "package:flutter/material.dart";
 import 'dart:math';
 
+import 'package:python_app/meta/constants.dart';
+
 const CURVE_HEIGHT = 160.0;
 const AVATAR_RADIUS = CURVE_HEIGHT * 0.28;
 const AVATAR_DIAMETER = AVATAR_RADIUS * 2;
@@ -15,20 +17,7 @@ class _ContentPageState extends State<ContentPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              // Colors.blue[100],
-              // Colors.blue[300],
-              Color(0xFF7E9BE0),
-              //Color(0xFF1b1e44),
-              Color(0xFF2E8BC0),
-            ],
-            begin: Alignment.bottomCenter,
-            end: Alignment.topCenter,
-            tileMode: TileMode.clamp,
-          ),
-        ),
+        decoration: gradientSet,
         child: Column(
           children: <Widget>[
             new Stack(
