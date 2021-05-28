@@ -2,9 +2,9 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:http/http.dart' as http;
 import 'package:python_app/meta/keys.dart';
-import 'package:python_app/models/channel_model.dart';
-import 'package:python_app/models/playlist_model.dart';
-import 'package:python_app/models/video_model.dart';
+import 'package:python_app/models/YouTubeScreen/channel_model.dart';
+import 'package:python_app/models/YouTubeScreen/playlist_model.dart';
+import 'package:python_app/models/YouTubeScreen/video_model.dart';
 
 class APIService {
   APIService._instantiate();

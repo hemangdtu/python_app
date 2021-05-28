@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:python_app/meta/data.dart';
-import 'package:python_app/models/widgetDirectory.dart';
+import 'package:python_app/models/ExampleScreen/programList.dart';
 
 class ExamplesPage extends StatelessWidget {
   @override

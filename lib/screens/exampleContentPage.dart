@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:python_app/meta/programs/sumOfNumbers.dart';
-import 'package:python_app/models/markdownModel.dart';
+import 'package:python_app/models/ExampleScreen/markdownModel.dart';
 
 class ExampleContentPage extends StatelessWidget {
   @override

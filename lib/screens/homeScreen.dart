@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:python_app/meta/data.dart';
-import 'package:python_app/models/widgetDirectory.dart';
+import 'package:python_app/models/HomeScreen/horizontalListTiles.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
