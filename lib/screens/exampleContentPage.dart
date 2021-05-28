@@ -35,13 +35,28 @@ class ExampleContentPage extends StatelessWidget {
             ),
           ),
           body: TabBarView(
-            children: [
-              markdownContent("print(\"Hello, World!\")"),
-              markdownContent(sumOfNumbersMarkdown),
-            ],
+            children: exampleContent(domain),
+            // children: [
+            // markdownContent("print(\"Hello, World!\")"),
+            // markdownContent(sumOfNumbersMarkdown),
+            // ],
           ),
         ),
       ),
     );
   }
+}
+
+List<Widget> exampleContent(String topic) {
+  Map<String, List<Widget>> contents = {
+    "Hello, World!": [
+      markdownContent("print(\"Hello, World!\")"),
+      markdownContent(sumOfNumbersMarkdown),
+    ],
+    "Add Two Numbers": [
+      markdownContent("Numbers"),
+      markdownContent(sumOfNumbersMarkdown),
+    ],
+  };
+  return contents[topic];
 }

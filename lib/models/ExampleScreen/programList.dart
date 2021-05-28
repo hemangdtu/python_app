@@ -22,7 +22,7 @@ Widget exampleProgramList(BuildContext context, int index) {
             i++)
           ExampleListElement(
             title: exampleTileStrings[exampleCategories[index]][i],
-            link: exampleCategoriesInfo[exampleCategories[index]]["link"],
+            // link: exampleCategoriesInfo[exampleCategories[index]]["link"],
           ),
       ],
     ),
@@ -48,7 +48,9 @@ class ExampleListElement extends StatelessWidget {
       trailing: Icon(Icons.book),
       onTap: () {
         Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return ExampleContentPage();
+          return ExampleContentPage(
+            domain: title,
+          );
         }));
       },
     );
