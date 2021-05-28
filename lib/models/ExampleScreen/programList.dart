@@ -17,9 +17,11 @@ Widget exampleProgramList(BuildContext context, int index) {
     ),
     child: ListView(
       children: [
-        for (int i = 0; i < exampleTileStrings.length; i++)
+        for (int i = 0;
+            i < exampleTileStrings[exampleCategories[index]].length;
+            i++)
           ExampleListElement(
-            title: exampleTileStrings[i],
+            title: exampleTileStrings[exampleCategories[index]][i],
             link: exampleCategoriesInfo[exampleCategories[index]]["link"],
           ),
       ],
@@ -49,28 +51,6 @@ class ExampleListElement extends StatelessWidget {
           return ExampleContentPage();
         }));
       },
-    );
-  }
-}
-
-// Video List Tile
-class VideoListElement extends StatelessWidget {
-  VideoListElement({this.title, this.link});
-
-  final String title;
-  final Function link;
-
-  @override
-  Widget build(BuildContext context) {
-    return ListTile(
-      title: Text(
-        title,
-        style: TextStyle(
-          fontWeight: FontWeight.bold,
-        ),
-      ),
-      trailing: Icon(Icons.play_circle_filled),
-      onTap: link,
     );
   }
 }

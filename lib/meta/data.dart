@@ -56,17 +56,52 @@ var exampleCategoriesInfo = {
   },
 };
 
-List<String> exampleTileStrings = [
-  "Hello, World!",
-  "Add Two Numbers",
-  "Square Root",
-  "Area of Triangle",
-  "Swap Two Variables",
-  "Find Roots of a Quadratic Equation",
-  "Convert Kilometers into Miles",
-  "Convert Celsius to Fahrenheit",
-  "Check if a Number is Positive, Negative or Zero",
-];
+Map<String, List<String>> exampleTileStrings = {
+  "Basic Programs": [
+    "Hello, World!",
+    "Add Two Numbers",
+    "Square Root",
+    "Area of Triangle",
+    "Swap Two Variables",
+    "Find Roots of a Quadratic Equation",
+    "Convert Kilometers into Miles",
+    "Convert Celsius to Fahrenheit",
+    "Check if a Number is Positive, Negative or Zero",
+  ],
+  "Conditions and Loops": [
+    "Conditions and Loops",
+    "Convert Kilometers into Miles",
+    "Convert Celsius to Fahrenheit",
+  ],
+  "Arrays": [
+    "Arrays",
+    "Convert Kilometers into Miles",
+    "Convert Celsius to Fahrenheit",
+    "Convert Kilometers into Miles",
+    "Convert Celsius to Fahrenheit",
+    "Convert Kilometers into Miles",
+    "Convert Celsius to Fahrenheit",
+    "Convert Kilometers into Miles",
+    "Convert Celsius to Fahrenheit",
+    "Convert Kilometers into Miles",
+    "Convert Celsius to Fahrenheit",
+  ],
+  "Pattern Printing": [
+    "Pattern Printing",
+  ],
+  "Lists": [
+    "Lists",
+  ],
+  "Strings": [
+    "Strings",
+  ],
+  "Searching Algorithms": [
+    "Searching Algorithms",
+  ],
+  "Sorting Algorithms": [
+    "Sorting Algorithms",
+  ],
+};
 
 List<String> sectionNames = [
   "Introduction and Setup",

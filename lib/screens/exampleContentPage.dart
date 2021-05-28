@@ -3,6 +3,9 @@ import 'package:python_app/meta/programs/sumOfNumbers.dart';
 import 'package:python_app/models/ExampleScreen/markdownModel.dart';
 
 class ExampleContentPage extends StatelessWidget {
+  final String domain;
+  ExampleContentPage({this.domain});
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(

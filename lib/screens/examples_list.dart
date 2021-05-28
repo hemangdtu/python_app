@@ -53,8 +53,7 @@ class ExamplesPage extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context) {
-                return ExampleListPage(
-                    index); // exampleCategoriesInfo[exampleCategories[index]]["link"];
+                return ExampleListPage(index);
               }),
             );
           },
