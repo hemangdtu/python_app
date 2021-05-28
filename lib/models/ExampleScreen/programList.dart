@@ -22,7 +22,6 @@ Widget exampleProgramList(BuildContext context, int index) {
             i++)
           ExampleListElement(
             title: exampleTileStrings[exampleCategories[index]][i],
-            // link: exampleCategoriesInfo[exampleCategories[index]]["link"],
           ),
       ],
     ),

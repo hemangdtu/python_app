@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:python_app/meta/hyperlinks.dart';
 
-List<String> videoTileStrings = [
-  "Overview of Python Programming",
-  "Datatypes in Python Programming",
-  "Creating Variables in Python Programming",
-  "print() in Python Programming",
-  "input() in Python Programming",
-  "Operators in Python Programming",
-];
+// List<String> videoTileStrings = [
+//   "Overview of Python Programming",
+//   "Datatypes in Python Programming",
+//   "Creating Variables in Python Programming",
+//   "print() in Python Programming",
+//   "input() in Python Programming",
+//   "Operators in Python Programming",
+// ];
 
 List<String> exampleCategories = [
   "Basic Programs",
@@ -24,35 +24,27 @@ List<String> exampleCategories = [
 var exampleCategoriesInfo = {
   "Basic Programs": {
     "image": "assets/python_logo.png",
-    "link": "A",
   },
   "Conditions and Loops": {
     "image": "assets/python_logo.png",
-    "link": "A",
   },
   "Arrays": {
     "image": "assets/python_logo.png",
-    "link": "A",
   },
   "Pattern Printing": {
     "image": "assets/python_logo.png",
-    "link": "A",
   },
   "Lists": {
     "image": "assets/python_logo.png",
-    "link": "A",
   },
   "Strings": {
     "image": "assets/python_logo.png",
-    "link": "A",
   },
   "Sorting Algorithms": {
     "image": "assets/python_logo.png",
-    "link": "A",
   },
   "Searching Algorithms": {
     "image": "assets/python_logo.png",
-    "link": "A",
   },
 };
 

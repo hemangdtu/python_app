@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:python_app/models/HomeScreen/tutorialScreen.dart';
 
 class HorizontalList extends StatelessWidget {
   // ignore: non_constant_identifier_names
@@ -32,7 +33,6 @@ class ListElement extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(2.0),
       child: InkWell(
-        onTap: () {},
         child: Container(
           width: 200,
           child: ListTile(
@@ -58,6 +58,13 @@ class ListElement extends StatelessWidget {
             ),
           ),
         ),
+        onTap: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return TutorialScreen(
+              tutorialTitle: image_caption,
+            );
+          }));
+        },
       ),
     );
   }
