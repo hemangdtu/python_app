@@ -58,5 +58,9 @@ List<Widget> exampleContent(String topic) {
       markdownContent(sumOfNumbersMarkdown),
     ],
   };
-  return contents[topic];
+  return contents[topic] ??
+      [
+        Center(child: Text("Content to be added soon!")),
+        Center(child: Text("Content to be added soon!")),
+      ];
 }

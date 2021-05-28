@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:python_app/meta/data.dart';
-import 'package:python_app/screens/exampleContentPage.dart';
+import 'package:python_app/models/ExampleScreen/exampleContentPage.dart';
 
 Widget exampleProgramList(BuildContext context, int index) {
   return Container(
