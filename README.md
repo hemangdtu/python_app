@@ -1,8 +1,8 @@
 # Python App
 
-A new Flutter project.
+A Python resource app built in Flutter.
 
-## Screnshots
+## Screenshots
 | YouTube Section | Example Section | Tutorial Section | Questions Section | Resources Section |
 |-|-|-|-|-|
 | ![youtubeScreen](https://user-images.githubusercontent.com/55807508/120085345-0b0f3a80-c0f5-11eb-8522-ac71015f8d47.png) | ![examplesScreen](https://user-images.githubusercontent.com/55807508/120085350-18c4c000-c0f5-11eb-8a75-03c1b9a69e8d.png) | ![homeScreen](https://user-images.githubusercontent.com/55807508/120085362-24b08200-c0f5-11eb-87b0-25ed77c2220a.png) | ![questionsScreen](https://user-images.githubusercontent.com/55807508/120085389-5f1a1f00-c0f5-11eb-8edf-820b5834f5c6.png) | ![resourcesScreen](https://user-images.githubusercontent.com/55807508/120085394-65a89680-c0f5-11eb-8bca-9c9688d3b38a.png) |
