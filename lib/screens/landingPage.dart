@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:python_app/meta/constants.dart';
+import 'package:python_app/models/QuestionsScreen/questionsPage.dart';
 
 import 'package:python_app/models/qna_page.dart';
 import 'package:python_app/screens/aboutUs.dart';
@@ -22,7 +23,8 @@ class _LandingPageState extends State<LandingPage> {
   int currentPage = 0;
   int selectedIndex = 2;
 
-  final ContentPage _searchbarcode = ContentPage();
+  // final ContentPage _searchbarcode = ContentPage();
+  final QuestionsPage _questionsList = QuestionsPage();
   final YouTubePage _list = YouTubePage();
   final ExamplesPage _newexamples = ExamplesPage();
   final ResourceList _resourceList = ResourceList();
@@ -42,7 +44,8 @@ class _LandingPageState extends State<LandingPage> {
         return _newHome;
         break;
       case 3:
-        return _searchbarcode;
+        // return _searchbarcode;
+        return _questionsList;
         break;
       case 4:
         return _resourceList;
