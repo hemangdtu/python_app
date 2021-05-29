@@ -10,22 +10,17 @@ class _QuestionsPageState extends State<QuestionsPage> {
   @override
   Widget build(BuildContext context) {
     Map<int, List<String>> questions = {
-      0: [
-        "Question.1.",
-        "Answer.1.",
-      ],
-      1: [
-        "Question.2.",
-        "Answer.2.",
-      ],
-      2: [
-        "Question.3.",
-        "Answer.3.",
-      ],
-      3: [
-        "Question.4.",
-        "Answer.4.",
-      ],
+      0: ["Question.1.", "Answer.1."],
+      1: ["Question.2.", "Answer.2."],
+      2: ["Question.3.", "Answer.3."],
+      3: ["Question.4.", "Answer.4."],
+      4: ["Question.4.", "Answer.4."],
+      5: ["Question.4.", "Answer.4."],
+      6: ["Question.4.", "Answer.4."],
+      7: ["Question.4.", "Answer.4."],
+      8: ["Question.4.", "Answer.4."],
+      9: ["Question.4.", "Answer.4."],
+      10: ["Question.4.", "Answer.4."],
     };
 
     return Scaffold(
