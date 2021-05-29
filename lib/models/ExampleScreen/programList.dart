@@ -33,9 +33,10 @@ class ExampleListElement extends StatelessWidget {
         title,
         style: TextStyle(
           fontWeight: FontWeight.bold,
+          fontSize: 17,
         ),
       ),
-      trailing: Icon(Icons.book),
+      trailing: Icon(Icons.auto_stories),
       onTap: () {
         Navigator.push(context, MaterialPageRoute(builder: (context) {
           return ExampleContentPage(

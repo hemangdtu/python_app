@@ -193,12 +193,12 @@ var resourceTileInfo = {
   "Book 1": {
     "icon": Icons.local_library,
     "color": Colors.cyan,
-    "function": ResourceLinks.resource1,
+    "function": ResourceLinks.notes,
   },
   "Book 2": {
     "icon": Icons.local_library,
     "color": Colors.cyan,
-    "function": ResourceLinks.resource2,
+    "function": ResourceLinks.worksheets,
   },
   "Book 3": {
     "icon": Icons.local_library,

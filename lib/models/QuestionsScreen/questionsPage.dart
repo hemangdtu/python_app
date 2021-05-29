@@ -49,21 +49,44 @@ class _QuestionsPageState extends State<QuestionsPage> {
                 ).animate(animation),
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: ExpansionTile(
-                    title: Text(
-                      questions[index][0],
-                      style: TextStyle(color: Colors.black),
+                  child: Card(
+                    elevation: 5,
+                    color: Colors.lightBlue[50],
+                    shadowColor: Colors.green[700],
+                    child: ExpansionTile(
+                      title: Text(
+                        questions[index][0],
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 17,
+                        ),
+                      ),
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            bottom: 10.0,
+                            top: 10.0,
+                            left: 18.0,
+                            right: 18.0,
+                          ),
+                          child: Align(
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              questions[index][1],
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 17,
+                              ),
+                            ),
+                          ),
+                        )
+                      ],
+                      iconColor: Colors.black,
+                      collapsedIconColor: Colors.black,
+                      // backgroundColor: Colors.white,
+                      // collapsedBackgroundColor: Colors.white38,
                     ),
-                    children: [
-                      Text(
-                        questions[index][1],
-                        style: TextStyle(color: Colors.black),
-                      )
-                    ],
-                    iconColor: Colors.black,
-                    collapsedIconColor: Colors.black,
-                    backgroundColor: Colors.white,
-                    collapsedBackgroundColor: Colors.white38,
                   ),
                 ),
               ),

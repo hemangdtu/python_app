@@ -18,11 +18,13 @@ class ExamplesPage extends StatelessWidget {
         crossAxisCount: 4,
         itemCount: exampleCategories.length,
         itemBuilder: (BuildContext context, int index) => InkWell(
-          child: Container(
-            color: Colors.white,
+          child: Card(
+            elevation: 5,
+            color: Colors.lightBlue[50],
+            shadowColor: Colors.green[700],
             child: Center(
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Image(
                     image: AssetImage(
@@ -34,6 +36,7 @@ class ExamplesPage extends StatelessWidget {
                     exampleCategories[index],
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
+                      fontSize: 15,
                     ),
                   )
                 ],
@@ -55,7 +58,6 @@ class ExamplesPage extends StatelessWidget {
         crossAxisSpacing: 4.0,
       ),
     );
-    // return _myListView(context);
   }
 }
 

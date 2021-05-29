@@ -21,6 +21,18 @@ class ContactUs {
       throw 'Could not launch $url';
     }
   }
+
+  static visitWebsite() async {
+    const url = 'https://sites.google.com/view/workingwithsmile-karuna/home';
+    if (await canLaunch(url)) {
+      await launch(
+        url,
+        forceWebView: false,
+      );
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
 }
 
 class VideoLinks {
@@ -211,8 +223,9 @@ class ExamplesLinks {
 }
 
 class ResourceLinks {
-  static resource1() async {
-    const url = 'https://www.youtube.com/watch?v=0t0AS1abKkw';
+  static worksheets() async {
+    const url =
+        'https://sites.google.com/view/workingwithsmile-karuna/python-worksheets';
     if (await canLaunch(url)) {
       await launch(
         url,
@@ -223,8 +236,8 @@ class ResourceLinks {
     }
   }
 
-  static resource2() async {
-    const url = 'https://www.youtube.com/watch?v=T2G9LnAM43Q';
+  static notes() async {
+    const url = 'https://sites.google.com/view/workingwithsmile-karuna/notes';
     if (await canLaunch(url)) {
       await launch(
         url,

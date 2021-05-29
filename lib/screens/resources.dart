@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:python_app/meta/constants.dart';
 import 'package:python_app/meta/data.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:python_app/meta/hyperlinks.dart';
 
 class ResourceList extends StatelessWidget {
   @override
@@ -17,10 +17,109 @@ class ResourceList extends StatelessWidget {
     }
     return Container(
       decoration: gradientSet,
-      padding: EdgeInsets.symmetric(horizontal: 20.0),
-      child: GridView.count(
-        crossAxisCount: 2,
-        children: resourceTile,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: EdgeInsets.only(
+              left: 20.0,
+              top: 15,
+              bottom: 10,
+              right: 20.0,
+            ),
+            child: Text(
+              "Worksheets",
+              style: TextStyle(
+                fontSize: 30,
+                fontFamily: "SF-Pro-Text-Bold",
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(
+              left: 20.0,
+              right: 20.0,
+            ),
+            child: Card(
+              elevation: 5,
+              color: Colors.lightBlue[50],
+              shadowColor: Colors.green[700],
+              child: ListTile(
+                title: Text(
+                  "Try Python Worksheets",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                onTap: ResourceLinks.worksheets,
+                trailing: Icon(Icons.arrow_forward_ios_outlined),
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(
+              left: 20.0,
+              top: 15,
+              bottom: 10,
+              right: 20.0,
+            ),
+            child: Text(
+              "Notes",
+              style: TextStyle(
+                fontSize: 30,
+                fontFamily: "SF-Pro-Text-Bold",
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(
+              left: 20.0,
+              right: 20.0,
+            ),
+            child: Card(
+              elevation: 5,
+              color: Colors.lightBlue[50],
+              shadowColor: Colors.green[700],
+              child: ListTile(
+                title: Text(
+                  "Refer to Python Notes",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                onTap: ResourceLinks.notes,
+                trailing: Icon(Icons.arrow_forward_ios_outlined),
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(
+              left: 20.0,
+              top: 15,
+              bottom: 10,
+              right: 20.0,
+            ),
+            child: Text(
+              "Books",
+              style: TextStyle(
+                fontSize: 30,
+                fontFamily: "SF-Pro-Text-Bold",
+              ),
+            ),
+          ),
+          Expanded(
+            child: GridView.count(
+              padding: EdgeInsets.only(
+                left: 20.0,
+                right: 20.0,
+              ),
+              crossAxisCount: 3,
+              children: resourceTile,
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -38,10 +137,10 @@ class ResourceTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(30),
+        borderRadius: BorderRadius.circular(10),
       ),
       elevation: 5,
-      margin: EdgeInsets.all(8.0),
+      //margin: EdgeInsets.all(8.0),
       color: Colors.lightBlue[50],
       shadowColor: Colors.green[700],
       child: InkWell(
@@ -53,12 +152,12 @@ class ResourceTile extends StatelessWidget {
             children: <Widget>[
               Icon(
                 icon,
-                size: 75.0,
+                // size: 75.0,
                 color: warna,
               ),
               Text(
                 title,
-                style: new TextStyle(
+                style: TextStyle(
                   fontSize: 20.0,
                   fontWeight: FontWeight.bold,
                 ),
@@ -68,77 +167,5 @@ class ResourceTile extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-_launchURLB1() async {
-  const url = 'https://www.youtube.com/watch?v=bqyJRQR_Ml4';
-  if (await canLaunch(url)) {
-    await launch(
-      url,
-      forceWebView: false,
-    );
-  } else {
-    throw 'Could not launch $url';
-  }
-}
-
-_launchURLB2() async {
-  const url = 'https://www.youtube.com/watch?v=bqyJRQR_Ml4';
-  if (await canLaunch(url)) {
-    await launch(
-      url,
-      forceWebView: false,
-    );
-  } else {
-    throw 'Could not launch $url';
-  }
-}
-
-_launchURLB3() async {
-  const url = 'https://www.youtube.com/watch?v=bqyJRQR_Ml4';
-  if (await canLaunch(url)) {
-    await launch(
-      url,
-      forceWebView: false,
-    );
-  } else {
-    throw 'Could not launch $url';
-  }
-}
-
-_launchURLB4() async {
-  const url = 'https://www.youtube.com/watch?v=bqyJRQR_Ml4';
-  if (await canLaunch(url)) {
-    await launch(
-      url,
-      forceWebView: false,
-    );
-  } else {
-    throw 'Could not launch $url';
-  }
-}
-
-_launchURLB5() async {
-  const url = 'https://www.youtube.com/watch?v=bqyJRQR_Ml4';
-  if (await canLaunch(url)) {
-    await launch(
-      url,
-      forceWebView: false,
-    );
-  } else {
-    throw 'Could not launch $url';
-  }
-}
-
-_launchURLB6() async {
-  const url = 'https://www.youtube.com/watch?v=bqyJRQR_Ml4';
-  if (await canLaunch(url)) {
-    await launch(
-      url,
-      forceWebView: false,
-    );
-  } else {
-    throw 'Could not launch $url';
   }
 }

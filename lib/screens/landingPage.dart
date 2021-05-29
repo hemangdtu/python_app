@@ -4,7 +4,6 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:python_app/meta/constants.dart';
 import 'package:python_app/models/QuestionsScreen/questionsPage.dart';
 
-import 'package:python_app/models/qna_page.dart';
 import 'package:python_app/screens/aboutUs.dart';
 //import 'package:python_app/screens/search.dart';
 import 'package:python_app/screens/youtube_list.dart';
@@ -77,6 +76,11 @@ class _LandingPageState extends State<LandingPage> {
               leading: Icon(Icons.mail_outline_sharp),
               title: Text("Send Us Feedback"),
               onTap: ContactUs.workingWithSmileMail,
+            ),
+            ListTile(
+              leading: Icon(Icons.public_sharp),
+              title: Text("Visit our Website"),
+              onTap: ContactUs.visitWebsite,
             ),
             ListTile(
               leading: Icon(Icons.supervised_user_circle_sharp),

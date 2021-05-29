@@ -11,8 +11,8 @@ class HomeScreen extends StatelessWidget {
     for (int i = 0; i < sectionNames.length; i++) {
       sectionLists.add(
         Padding(
-          padding: const EdgeInsets.only(left: 20.0, top: 15, bottom: 10),
-          child: new Text(
+          padding: EdgeInsets.only(left: 20.0, top: 15, bottom: 10),
+          child: Text(
             sectionNames[i],
             style: TextStyle(
               fontSize: 30,
@@ -23,10 +23,12 @@ class HomeScreen extends StatelessWidget {
       );
       tutorialList = [];
       for (int j = 0; j < tutorialTile[sectionNames[i]].length; j++) {
-        tutorialList.add(ListElement(
-          image_location: tutorialTileImage[sectionNames[i]],
-          image_caption: tutorialTile[sectionNames[i]][j],
-        ));
+        tutorialList.add(
+          ListElement(
+            image_location: tutorialTileImage[sectionNames[i]],
+            image_caption: tutorialTile[sectionNames[i]][j],
+          ),
+        );
       }
       sectionLists.add(HorizontalList(
         list_data: tutorialList,
