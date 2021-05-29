@@ -1,3 +1,4 @@
+import 'package:auto_animated/auto_animated.dart';
 import 'package:flutter/material.dart';
 import 'package:python_app/meta/constants.dart';
 
@@ -26,30 +27,74 @@ class _QuestionsPageState extends State<QuestionsPage> {
     return Scaffold(
       body: Container(
         decoration: gradientSet,
-        child: ListView.builder(
-            itemCount: questions.length,
-            itemBuilder: (BuildContext context, int index) {
-              return Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: ExpansionTile(
-                  title: Text(
-                    questions[index][0],
-                    style: TextStyle(color: Colors.black),
-                  ),
-                  children: [
-                    Text(
-                      questions[index][1],
+        child: LiveList(
+          delay: Duration(microseconds: 1),
+          showItemInterval: Duration(milliseconds: 50),
+          showItemDuration: Duration(milliseconds: 500),
+          // visibleFraction: 0.05,
+          scrollDirection: Axis.vertical,
+          // reAnimateOnVisibility: false,
+          itemCount: questions.length,
+          itemBuilder:
+              (BuildContext context, int index, Animation<double> animation) {
+            return FadeTransition(
+              opacity: Tween<double>(
+                begin: 0,
+                end: 1,
+              ).animate(animation),
+              child: SlideTransition(
+                position: Tween<Offset>(
+                  begin: Offset(0, -0.1),
+                  end: Offset.zero,
+                ).animate(animation),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ExpansionTile(
+                    title: Text(
+                      questions[index][0],
                       style: TextStyle(color: Colors.black),
-                    )
-                  ],
-                  iconColor: Colors.black,
-                  collapsedIconColor: Colors.black,
-                  backgroundColor: Colors.white,
-                  collapsedBackgroundColor: Colors.white38,
+                    ),
+                    children: [
+                      Text(
+                        questions[index][1],
+                        style: TextStyle(color: Colors.black),
+                      )
+                    ],
+                    iconColor: Colors.black,
+                    collapsedIconColor: Colors.black,
+                    backgroundColor: Colors.white,
+                    collapsedBackgroundColor: Colors.white38,
+                  ),
                 ),
-              );
-            }),
+              ),
+            );
+          },
+        ),
       ),
     );
   }
 }
+
+// ListView.builder(
+//             itemCount: questions.length,
+//             itemBuilder: (BuildContext context, int index) {
+//               return Padding(
+//                 padding: const EdgeInsets.all(8.0),
+//                 child: ExpansionTile(
+//                   title: Text(
+//                     questions[index][0],
+//                     style: TextStyle(color: Colors.black),
+//                   ),
+//                   children: [
+//                     Text(
+//                       questions[index][1],
+//                       style: TextStyle(color: Colors.black),
+//                     )
+//                   ],
+//                   iconColor: Colors.black,
+//                   collapsedIconColor: Colors.black,
+//                   backgroundColor: Colors.white,
+//                   collapsedBackgroundColor: Colors.white38,
+//                 ),
+//               );
+//             })
