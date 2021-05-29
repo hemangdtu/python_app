@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:python_app/meta/constants.dart';
-import 'package:python_app/models/QuestionsScreen/questionsPage.dart';
+import 'package:python_app/screens/questionsPage.dart';
 
 import 'package:python_app/screens/aboutUs.dart';
 //import 'package:python_app/screens/search.dart';

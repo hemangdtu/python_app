@@ -28,9 +28,9 @@ class _QuestionsPageState extends State<QuestionsPage> {
       body: Container(
         decoration: gradientSet,
         child: LiveList(
-          delay: Duration(microseconds: 1),
+          delay: Duration(microseconds: 0),
           showItemInterval: Duration(milliseconds: 50),
-          showItemDuration: Duration(milliseconds: 500),
+          //showItemDuration: Duration(milliseconds: 500),
           // visibleFraction: 0.05,
           scrollDirection: Axis.vertical,
           // reAnimateOnVisibility: false,
@@ -48,7 +48,7 @@ class _QuestionsPageState extends State<QuestionsPage> {
                   end: Offset.zero,
                 ).animate(animation),
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(8.0),
                   child: Card(
                     elevation: 5,
                     color: Colors.lightBlue[50],
@@ -64,7 +64,7 @@ class _QuestionsPageState extends State<QuestionsPage> {
                       ),
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(
+                          padding: EdgeInsets.only(
                             bottom: 10.0,
                             top: 10.0,
                             left: 18.0,
