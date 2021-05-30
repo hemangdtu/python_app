@@ -62,8 +62,9 @@ class ExamplesPage extends StatelessWidget {
 }
 
 class ExampleListPage extends StatelessWidget {
-  int index;
+  final int index;
   ExampleListPage(this.index);
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
