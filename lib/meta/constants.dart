@@ -23,3 +23,6 @@ List<List<dynamic>> navBarOptions = [
   [Icons.assignment, "Questions and Answers"],
   [Icons.book, "Resources"],
 ];
+
+Color shadowColor = Colors.green[700];
+Color cardColor = Colors.lightBlue[50];

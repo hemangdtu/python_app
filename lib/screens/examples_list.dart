@@ -20,8 +20,8 @@ class ExamplesPage extends StatelessWidget {
         itemBuilder: (BuildContext context, int index) => InkWell(
           child: Card(
             elevation: 5,
-            color: Colors.lightBlue[50],
-            shadowColor: Colors.green[700],
+            color: cardColor,
+            shadowColor: shadowColor,
             child: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,

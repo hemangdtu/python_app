@@ -7,8 +7,6 @@ import 'package:python_app/models/YouTubeScreen/video_model.dart';
 import 'package:python_app/screens/video_screen.dart';
 import 'package:python_app/services/youtube_api.dart';
 
-// TODO : UI enhancements
-
 class YouTubePage extends StatefulWidget {
   @override
   _YouTubePageState createState() => _YouTubePageState();
@@ -49,7 +47,7 @@ class _YouTubePageState extends State<YouTubePage> {
           color: Colors.white,
           boxShadow: [
             BoxShadow(
-              color: Colors.black54,
+              color: shadowColor,
               offset: Offset(0, 2),
               blurRadius: 6.0,
             ),
@@ -108,12 +106,12 @@ class _YouTubePageState extends State<YouTubePage> {
         padding: EdgeInsets.all(10.0),
         height: 140.0,
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: cardColor,
           boxShadow: [
             BoxShadow(
-              color: Colors.black12,
-              offset: Offset(0, 1),
-              blurRadius: 6.0,
+              color: shadowColor,
+              offset: Offset(1, 2),
+              blurRadius: 4.0,
             ),
           ],
         ),

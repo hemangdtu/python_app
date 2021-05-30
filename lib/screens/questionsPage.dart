@@ -51,8 +51,8 @@ class _QuestionsPageState extends State<QuestionsPage> {
                   padding: EdgeInsets.all(8.0),
                   child: Card(
                     elevation: 5,
-                    color: Colors.lightBlue[50],
-                    shadowColor: Colors.green[700],
+                    color: cardColor,
+                    shadowColor: shadowColor,
                     child: ExpansionTile(
                       title: Text(
                         questions[index][0],
