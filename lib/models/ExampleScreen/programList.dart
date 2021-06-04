@@ -28,22 +28,32 @@ class ExampleListElement extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      title: Text(
-        title,
-        style: TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: 17,
-        ),
+    int i = 0;
+    return Card(
+      margin: EdgeInsets.symmetric(
+        horizontal: 15,
+        vertical: 6,
       ),
-      trailing: Icon(Icons.auto_stories),
-      onTap: () {
-        Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return ExampleContentPage(
-            domain: title,
-          );
-        }));
-      },
+      elevation: 5,
+      color: cardColor,
+      shadowColor: shadowColor,
+      child: ListTile(
+        title: Text(
+          title,
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 17,
+          ),
+        ),
+        trailing: Icon(Icons.auto_stories),
+        onTap: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return ExampleContentPage(
+              domain: title,
+            );
+          }));
+        },
+      ),
     );
   }
 }

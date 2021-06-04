@@ -1,14 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:python_app/models/ExampleScreen/markdownModel.dart';
-
-import 'package:python_app/meta/programs/arrays/arraysPrograms.dart';
-import 'package:python_app/meta/programs/basic/basicPrograms.dart';
-import 'package:python_app/meta/programs/conditionsLoops/conditionsLoopsPrograms.dart';
-import 'package:python_app/meta/programs/lists/listsPrograms.dart';
-import 'package:python_app/meta/programs/pattern/patternPrograms.dart';
-import 'package:python_app/meta/programs/searching/searchingPrograms.dart';
-import 'package:python_app/meta/programs/sorting/sortingPrograms.dart';
-import 'package:python_app/meta/programs/strings/stringPrograms.dart';
+import 'package:python_app/meta/programs/programExport.dart';
 
 class ExampleContentPage extends StatelessWidget {
   final String domain;
