@@ -24,5 +24,5 @@ List<List<dynamic>> navBarOptions = [
   [Icons.book, "Resources"],
 ];
 
-Color shadowColor = Colors.green[700];
+Color shadowColor = Colors.black87;
 Color cardColor = Colors.lightBlue[50];

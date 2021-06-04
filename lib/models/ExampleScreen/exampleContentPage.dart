@@ -58,7 +58,23 @@ List<Widget> exampleContent(String topic) {
       markdownContent(helloWorldExplain),
     ],
     "Add Two Numbers": [
-      markdownContent("Numbers"),
+      markdownContent(sumOfNumbersMarkdown),
+      markdownContent(sumOfNumbersExplain),
+    ],
+    "Square Root": [
+      markdownContent(sumOfNumbersMarkdown),
+      markdownContent(sumOfNumbersMarkdown),
+    ],
+    "Area of Triangle": [
+      markdownContent(sumOfNumbersMarkdown),
+      markdownContent(sumOfNumbersMarkdown),
+    ],
+    "Swap Two Variables": [
+      markdownContent(sumOfNumbersMarkdown),
+      markdownContent(sumOfNumbersMarkdown),
+    ],
+    "Find Roots of a Quadratic Equation": [
+      markdownContent(sumOfNumbersMarkdown),
       markdownContent(sumOfNumbersMarkdown),
     ],
   };
