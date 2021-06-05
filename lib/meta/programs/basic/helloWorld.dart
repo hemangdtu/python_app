@@ -1,4 +1,4 @@
-String helloWorldMarkdown = '''
+String helloWorldCode = '''
 ### Hello, World!
  
 #### Program

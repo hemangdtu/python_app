@@ -46,28 +46,28 @@ class ExampleContentPage extends StatelessWidget {
 List<Widget> exampleContent(String topic) {
   Map<String, List<Widget>> contents = {
     "Hello, World!": [
-      markdownContent(helloWorldMarkdown),
+      markdownContent(helloWorldCode),
       markdownContent(helloWorldExplain),
     ],
     "Add Two Numbers": [
-      markdownContent(sumOfNumbersMarkdown),
+      markdownContent(sumOfNumbersCode),
       markdownContent(sumOfNumbersExplain),
     ],
     "Square Root": [
-      markdownContent(sumOfNumbersMarkdown),
-      markdownContent(sumOfNumbersMarkdown),
+      markdownContent(sumOfNumbersCode),
+      markdownContent(sumOfNumbersCode),
     ],
     "Area of Triangle": [
-      markdownContent(sumOfNumbersMarkdown),
-      markdownContent(sumOfNumbersMarkdown),
+      markdownContent(areaOfTriangleCode),
+      markdownContent(areaOfTriangleExplain),
     ],
     "Swap Two Variables": [
-      markdownContent(sumOfNumbersMarkdown),
-      markdownContent(sumOfNumbersMarkdown),
+      markdownContent(sumOfNumbersCode),
+      markdownContent(sumOfNumbersCode),
     ],
     "Find Roots of a Quadratic Equation": [
-      markdownContent(sumOfNumbersMarkdown),
-      markdownContent(sumOfNumbersMarkdown),
+      markdownContent(sumOfNumbersCode),
+      markdownContent(sumOfNumbersCode),
     ],
   };
   return contents[topic] ??

@@ -1,4 +1,4 @@
-var sumOfNumbersMarkdown = '''
+var sumOfNumbersCode = '''
 ### Add Two Numbers
  
 #### Program
