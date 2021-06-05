@@ -13,6 +13,7 @@ Widget exampleProgramList(BuildContext context, int index) {
             i++)
           ExampleListElement(
             title: exampleTileStrings[exampleCategories[index]][i],
+            index: i + 1,
           ),
       ],
     ),
@@ -21,14 +22,13 @@ Widget exampleProgramList(BuildContext context, int index) {
 
 // Example List Tile
 class ExampleListElement extends StatelessWidget {
-  ExampleListElement({this.title, this.link});
+  ExampleListElement({this.title, this.index});
 
   final String title;
-  final String link;
+  final int index;
 
   @override
   Widget build(BuildContext context) {
-    int i = 0;
     return Card(
       margin: EdgeInsets.symmetric(
         horizontal: 15,
@@ -44,6 +44,9 @@ class ExampleListElement extends StatelessWidget {
             fontWeight: FontWeight.bold,
             fontSize: 17,
           ),
+        ),
+        leading: CircleAvatar(
+          child: Text("$index"),
         ),
         trailing: Icon(Icons.auto_stories),
         onTap: () {
