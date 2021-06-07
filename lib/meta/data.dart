@@ -52,7 +52,7 @@ Map<String, List<String>> exampleTileStrings = {
   "Basic Programs": [
     "Hello, World!",
     "Add Two Numbers",
-    "Calculate Simple Intrest",
+    "Calculate Simple Interest",
     "Calculate Square Root of a Number",
     "Perform Arithmetic Operations",
     "Area of Triangle",

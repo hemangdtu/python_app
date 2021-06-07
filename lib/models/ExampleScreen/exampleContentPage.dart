@@ -53,19 +53,35 @@ List<Widget> exampleContent(String topic) {
       markdownContent(sumOfNumbersCode),
       markdownContent(sumOfNumbersExplain),
     ],
-    "Square Root": [
+    "Calculate Simple Interest": [
+      markdownContent(simpleInterestCode),
+      markdownContent(simpleInterestExplain),
+    ],
+    "Calculate Square Root of a Number": [
       markdownContent(sumOfNumbersCode),
       markdownContent(sumOfNumbersCode),
+    ],
+    "Perform Arithmetic Operations": [
+      markdownContent(areaOfTriangleCode),
+      markdownContent(areaOfTriangleExplain),
     ],
     "Area of Triangle": [
       markdownContent(areaOfTriangleCode),
       markdownContent(areaOfTriangleExplain),
     ],
-    "Swap Two Variables": [
+    "Area of Circle": [
       markdownContent(sumOfNumbersCode),
       markdownContent(sumOfNumbersCode),
     ],
     "Find Roots of a Quadratic Equation": [
+      markdownContent(sumOfNumbersCode),
+      markdownContent(sumOfNumbersCode),
+    ],
+    "Swap Two Variables": [
+      markdownContent(sumOfNumbersCode),
+      markdownContent(sumOfNumbersCode),
+    ],
+    "Convert Celsius to Fahrenheit": [
       markdownContent(sumOfNumbersCode),
       markdownContent(sumOfNumbersCode),
     ],

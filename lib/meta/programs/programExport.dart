@@ -4,6 +4,7 @@
 export 'package:python_app/meta/programs/basic/helloWorld.dart';
 export 'package:python_app/meta/programs/basic/sumOfNumbers.dart';
 export 'package:python_app/meta/programs/basic/areaOfTriangle.dart';
+export 'package:python_app/meta/programs/basic/simpleInterest.dart';
 
 // Conditional Loops Programs
 
